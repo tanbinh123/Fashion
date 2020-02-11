@@ -1,5 +1,7 @@
 package com.manhnguyen.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +16,9 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import com.manhnguyen.entity.ChucVu;
 import com.manhnguyen.entity.NhanVien;
+import com.manhnguyen.entity.SanPham;
 import com.manhnguyen.service.EmployeeService;
+import com.manhnguyen.service.ProductService;
 
 @Controller
 @RequestMapping(value = {"/","home/"})
@@ -22,6 +26,10 @@ import com.manhnguyen.service.EmployeeService;
 public class HomeController {
 	@Autowired
 	EmployeeService qlns;
+	
+	@Autowired
+	ProductService productService;
+	
 	@GetMapping
 	public String DefaultHome(ModelMap map,HttpSession httpSession) {
 		if(httpSession.getAttribute("dangnhap")!=null)
@@ -29,6 +37,9 @@ public class HomeController {
 			String email=(String) httpSession.getAttribute("dangnhap");
 			map.addAttribute("dangnhap",email);
 		}
+		List<SanPham>list=productService.getListProduct();
+		map.addAttribute("list", list);
+		System.out.println(list.size());
 		return"web/home";
 	}
 	@GetMapping("Logout/")
