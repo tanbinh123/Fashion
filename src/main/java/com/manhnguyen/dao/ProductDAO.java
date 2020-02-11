@@ -25,7 +25,7 @@ public class ProductDAO implements ProductImpl{
 		Session session=sessionFactory.getCurrentSession();
 		String sql="from SANPHAM Limit";
 		// load 4 product for home page 
-		List<SanPham> list= session.createQuery(sql).setFirstResult(1).setMaxResults(4).getResultList();
+		List<SanPham> list= session.createQuery(sql).setFirstResult(0).setMaxResults(4).getResultList();
 		return list;
 	}
 	
