@@ -3,7 +3,8 @@
 <html lang="en">
 
 <!-- Mirrored from codingeek.net/html/roberto-ferracini/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Jan 2020 14:36:25 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -302,46 +303,20 @@
                     <h2>Categories</h2>
                 </div>
                 <div class="categories-item d-lg-flex justify-content-end">
-                    <div class="single-item active fadeIn mb-5 mb-lg-0" data-wow-duration=".8s" data-wow-delay=".2s">
-                        <div class="item-image cat-1">
+                <!-- Start load category -->
+                <c:forEach var="category" items="${listcategory}">
+                	 <div class="single-item active fadeIn mb-5 mb-lg-0" data-wow-duration=".8s" data-wow-delay=".2s">
+                        <div class="item-image "><!-- cat-1 -->
+                        	<img class="img1"alt="" src='<c:url value="/resources/web/img/home-1/category/${category.getHinhdanhmuc() }"/>'>
                         </div>
+                        <br/>
                         <div class="item-content">
-                            <h5><a href="shop-page.html">Shop for Sweatshirt</a></h5>
+                            <h5><a href="shop-page.html">${category.getTendanhmuc()}</a></h5>
                             <a href="shop-page.html">Explore Collection </a>
                         </div>
                     </div>
-                    <div class="single-item fadeIn" data-wow-duration=".8s" data-wow-delay=".4s">
-                        <div class="item-image cat-2">
-                        </div>
-                        <div class="item-content">
-                            <h5><a href="shop-page.html">Shop for Accessories</a></h5>
-                            <a href="shop-page.html">Live in your pockets</a>
-                        </div>
-                    </div>
-                    <div class="single-item fadeIn" data-wow-duration=".8s" data-wow-delay=".6s">
-                        <div class="item-image cat-3">
-                        </div>
-                        <div class="item-content">
-                            <h5><a href="shop-page.html">Shop for Bikini</a></h5>
-                            <a href="shop-page.html">Must haves for this summer</a>
-                        </div>
-                    </div>
-                    <div class="single-item fadeIn" data-wow-duration=".8s" data-wow-delay=".8s">
-                        <div class="item-image cat-4">
-                        </div>
-                        <div class="item-content">
-                            <h5><a href="shop-page.html">Shop for Shoes</a></h5>
-                            <a href="shop-page.html">Hot line things</a>
-                        </div>
-                    </div>
-                    <div class="single-item fadeIn" data-wow-duration=".8s" data-wow-delay="1s">
-                        <div class="item-image cat-5">
-                        </div>
-                        <div class="item-content">
-                            <h5><a href="shop-page.html">Shop for hats</a></h5>
-                            <a href="shop-page.html">Live in your pockets</a>
-                        </div>
-                    </div>
+                </c:forEach>     
+                <!--End load category  -->           
                 </div>
             </div>
         </div>
@@ -356,9 +331,9 @@
             <div class="col-lg-4 fadeInLeft">
                 <div class="discount-content">
                     <div class="section-title">
-                        <h2>20% Discount On Summer Collection</h2>
+                        <h2>${discount.getTenkhuyenmai() }</h2>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus augue nibh, at ullamcorper orci ullamcorper ut. Nisl tincidunt eget nullam non nisi est. Pharetra et ultrices neque ornare. Ac felis donec et odio pellentesque diam volutpat commodo sed.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus augue nibh, at ullamcorper orci ullamcorper ut.</p>
+                    <p>${discount.getMota() }</p>
                     <div class="btn-margin-top mb-5 mb-lg-0">
                         <a href="#" class="template-btn2">view items <span>&rharu;</span></a>
                     </div>

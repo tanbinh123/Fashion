@@ -1,5 +1,8 @@
 package com.manhnguyen.controller;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -15,8 +18,12 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.manhnguyen.entity.ChucVu;
+import com.manhnguyen.entity.DanhMucSanPham;
+import com.manhnguyen.entity.KhuyenMai;
 import com.manhnguyen.entity.NhanVien;
 import com.manhnguyen.entity.SanPham;
+import com.manhnguyen.service.CategoryService;
+import com.manhnguyen.service.DiscountService;
 import com.manhnguyen.service.EmployeeService;
 import com.manhnguyen.service.ProductService;
 
@@ -30,6 +37,12 @@ public class HomeController {
 	@Autowired
 	ProductService productService;
 	
+	@Autowired
+	CategoryService categoryService;
+	
+	@Autowired
+	DiscountService discountService;
+	
 	@GetMapping
 	public String DefaultHome(ModelMap map,HttpSession httpSession) {
 		if(httpSession.getAttribute("dangnhap")!=null)
@@ -37,9 +50,17 @@ public class HomeController {
 			String email=(String) httpSession.getAttribute("dangnhap");
 			map.addAttribute("dangnhap",email);
 		}
+		//load product to fontend
 		List<SanPham>list=productService.getListProduct();
 		map.addAttribute("list", list);
-		System.out.println(list.size());
+		//load category
+		List<DanhMucSanPham>listCategory=categoryService.CategoryList();
+		map.addAttribute("listcategory", listCategory);
+		//load discount
+		KhuyenMai discount=discountService.Discount();
+		map.addAttribute("discount",discount);
+	
+	
 		return"web/home";
 	}
 	@GetMapping("Logout/")

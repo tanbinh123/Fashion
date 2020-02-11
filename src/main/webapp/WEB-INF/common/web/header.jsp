@@ -317,23 +317,9 @@
             <ul class="navbar-nav">
                 <li class="menu-item-has-children current-menu-item">
                     <a href="#">Home</a>
-                    <ul class="sub-menu">
-                        <li><a href="index-2.html">Home 01</a></li>
-                        <li><a href="index-3.html">Home 02</a></li>
-                        <li><a href="index-4.html">Home 03</a></li>
-                    </ul>
                 </li>
                 <li class="menu-item-has-children">
-                    <a href="#">New Arrivals</a>
-                    <ul class="sub-menu">
-                        <li><a href="shop-page.html">Shop</a>
-                            <ul class="sub-menu">
-                                <li><a href="#">Shop 01</a></li>
-                                <li><a href="#">Shop 02</a></li>
-                                <li><a href="#">Shop 03</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <a href="#">New Arrivals</a> 
                 </li>
                 <li class="menu-item-has-children mega-menu-list">
                         <a href="#">Pages</a>

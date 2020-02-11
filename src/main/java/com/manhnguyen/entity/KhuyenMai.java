@@ -19,6 +19,7 @@ public class KhuyenMai {
 	private String tenkhuyenmai;
 	private String thoigianbatdau;
 	private String thoigianketthuc;
+	private String mua;
 	public Set<SanPham> getSanPhams() {
 		return sanPhams;
 	}
@@ -74,6 +75,12 @@ public class KhuyenMai {
 	}
 	public void setGiagiam(int giagiam) {
 		this.giagiam = giagiam;
+	}
+	public String getMua() {
+		return mua;
+	}
+	public void setMua(String mua) {
+		this.mua = mua;
 	}
 	
 
