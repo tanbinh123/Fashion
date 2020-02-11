@@ -56,7 +56,7 @@
                 <div class="content-404">
                     <img src='<c:url value="/resources/web/img/under-construction-page/error.png"/>'>
                     <span>404</span>
-                    <a href="index-3.jsp" class="template-btn">back to home</a>
+                    <a href="/Fashion/" class="template-btn">back to home</a>
                 </div>
             </div>
         </div>
