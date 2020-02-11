@@ -323,24 +323,15 @@
                 </li>
                 <li class="menu-item-has-children mega-menu-list">
                         <a href="#">Pages</a>
-                        <div class="mega-menu">
+                        <div class="mega-menu ">
                             <ul class="mega-menu-inner">
                                 <li><a href="about-page.html">About us</a></li>
                                 <li><a href="cart-page.html">Cart page</a></li>
                                 <li><a href="cart-tab-page.html">Cart Tab</a></li>
-                                <li><a href="blog-page-02.html">Blog page 01</a></li>
-                            </ul>
-                            <ul class="mega-menu-inner">
-                                <li><a href="blog-page.html">Blog page 02</a></li>
-                                <li><a href="blog-single-page-02.html">Blog Single 01</a></li>
-                                <li><a href="blog-single-page.html">Blog Single 02</a></li>
-                                <li><a href="faq-page.html">FAQ page</a></li>
                             </ul>
                             <ul class="mega-menu-inner">
                                 <li><a href="profile-page.html">Profile page</a></li>
-                                <li><a href="returns-page.html">Return page</a></li>
-                                <li><a href="404.html">404 page</a></li>
-                                <li><a href="coming-soon-page.html">Comming Soon</a></li>
+                                <li><a href="returns-page.html">Return page</a></li>            
                             </ul>
                             <ul class="mega-menu-inner">
                                 <img src='<c:url value="/resources/web/img/header-page/mega-menu.jpg"/>' alt="">
@@ -364,10 +355,12 @@
                 
                  <c:choose>
 			       	<c:when test="${dangnhap !=null}">
-			       		  <li><a>${dangnhap}</a>
+			       		  <li>
+			       		  	<a>${dangnhap}</a>
 			       		  </li>
-			       		  <li> <a href="Logout/"><h6>Logout</h6></a>				 
-			       		  </li>
+			       		  <li> <a href="Logout/"><i class="fa fa-sign-out" aria-hidden="true"></i></a>				 
+			       		  </li>  
+			       		 
 			       	</c:when>
 			       	<c:otherwise>
 			       		<li class="ml-3 floating-icon-3 user">

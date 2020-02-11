@@ -72,9 +72,9 @@
                             </div>
                             <div class="banner-icon">
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-facebook-official"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="https://www.facebook.com/mmma2344"><i class="fa fa-facebook-official"></i></a></li>
+                                    <li><a href="https://www.instagram.com/nm_ha_13/"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -198,9 +198,9 @@
                             </div>
                             <div class="banner-icon">
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-facebook-official"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="https://www.facebook.com/mmma2344"><i class="fa fa-facebook-official"></i></a></li>
+                                    <li><a href="https://www.instagram.com/nm_ha_13/"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -279,9 +279,6 @@
                         <h2 class="collection-h2">Limited Edition <br>Collection</h2>
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus augue nibh, at ullamcorper orci ullamcorper ut. Nisl tincidunt eget nullam non nisi est. Pharetra et ultrices neque ornare. Ac felis donec et odio pellentesque diam volutpat commodo sed. Dolor sed viverra ipsum nunc aliquet. Pharetra massa massa ultricies mi quis hendrerit dolor. In nisl nisi celerisque eu ultrices. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncusaugue nibh.</p>
-                    <div class="btn-margin-top">
-                        <a href="#" class="template-btn2">Explore Collection <span>&rharu;</span></a>
-                    </div>
                 </div>
             </div>
             <div class="col-lg-4 offset-lg-1 fadeInRight">
