@@ -178,12 +178,11 @@
                     <div class="dropdown">
                         <button class="drop-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Sort by
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Title</a>
-                            <a class="dropdown-item" href="#">Price</a>
-                            <a class="dropdown-item" href="#">Highest Selling</a>
-                        </div>
+                        </button>                  
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                            <a class="dropdown-item" href="/Fashion/shoppage/">Title</a>
+                            <a class="dropdown-item" href="/Fashion/shoppage/">Price</a>
+                        </div> 
                     </div>
                 </div>
 
@@ -223,7 +222,7 @@
                                     </div>
     
                                     <div class="cart-content-right">
-                                        <span class="current-price">${sanpham.getGiatien()}</span>
+                                        <span class="current-price">$${sanpham.getGiatien()}</span>
                                        <!--  <span class="old-price">$99.10</span> -->
                                     </div>
                                 </div>
@@ -236,11 +235,37 @@
 						</c:forEach>
 						
                      <!-- product end  -->    
+					
+					
+
                                      
                     </div>
                 </div>
+                <!-- pagging start  -->
+                <!-- load ajax  -->
+          				 <nav aria-label="...">
+						  <ul class="pagination pagination-sm justify-content-center">
+						  <c:forEach var="i" begin="1" end="${num}">
+							<c:choose>
+		                                <c:when test="${i == 1}">
+		                                    <li class="page-item active">
+		                                        <a class="page-link" href="#">${i}</a>
+		                                    </li>
+		                                </c:when>
+		                                <c:otherwise>
+		                                    <li class="page-item">
+		                                        <a class="page-link" href="#">${i}</a>
+		                                    </li>
+		                                </c:otherwise>
+		                       </c:choose>
+			
+						</c:forEach>
+						  </ul>
+						</nav>
+				<!-- pagging end  -->
             </div>
         </div>
+     
     </div>
 </section>
 <!-- Shop Content End -->

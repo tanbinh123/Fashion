@@ -26,7 +26,7 @@ public class SanPham {
 	DanhMucSanPham danhMucSanPham;
 	
 	private String tensanpham;
-	private String giatien;
+	private float giatien;
 	private String mota;
 	private String hinhsanpham;
 	private String gianhcho;
@@ -66,11 +66,11 @@ public class SanPham {
 		this.tensanpham = tensanpham;
 	}
 
-	public String getGiatien() {
+	public float getGiatien() {
 		return giatien;
 	}
 
-	public void setGiatien(String giatien) {
+	public void setGiatien(float giatien) {
 		this.giatien = giatien;
 	}
 

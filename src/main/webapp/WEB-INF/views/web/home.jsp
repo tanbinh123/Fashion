@@ -419,7 +419,7 @@
                                     </div>
     
                                     <div class="cart-content-right">
-                                        <span class="current-price">${sanpham.getGiatien()}</span>
+                                        <span class="current-price">$${sanpham.getGiatien()}</span>
                                        <!--  <span class="old-price">$99.10</span> -->
                                     </div>
                                 </div>

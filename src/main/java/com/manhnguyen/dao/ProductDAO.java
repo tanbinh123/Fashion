@@ -1,5 +1,6 @@
 package com.manhnguyen.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -29,11 +30,35 @@ public class ProductDAO implements ProductImpl{
 		return list;
 	}
 	@Transactional
-	public List<SanPham> getListProductShoppage() {
-		Session session=sessionFactory.getCurrentSession();
-		String sql="from SANPHAM";
-		List<SanPham> list= session.createQuery(sql).getResultList();
+	public List<SanPham> getListProductShoppage(int id,int start) {
+		List <SanPham>list=new ArrayList<SanPham>();
+		if(id<0) {
+			Session session=sessionFactory.getCurrentSession();
+			String sql="from SANPHAM";
+			list= session.createQuery(sql).getResultList();
+		}
+		if(id==0) {
+			Session session=sessionFactory.getCurrentSession();
+			String sql="from SANPHAM limit";
+			list= session.createQuery(sql).setFirstResult(start).setMaxResults(9).getResultList();
+			
+			
+		}
+		if(id==1) {
+			Session session=sessionFactory.getCurrentSession();
+			String sql="from SANPHAM order by GIATIEN asc";
+			list= session.createQuery(sql).setFirstResult(start).setMaxResults(9).getResultList();
+			
+		}
+		if(id==2) {
+			Session session=sessionFactory.getCurrentSession();
+			String sql="from SANPHAM order by TENSANPHAM asc";
+			list= session.createQuery(sql).setFirstResult(start).setMaxResults(9).getResultList();
+			
+			
+		}
 		return list;
+		
 	}
 	
 

@@ -205,7 +205,7 @@
             <h2>Login</h2>
         </div>
 
-        <form action="Login/" method="post">
+        <form action="/Fashion/Login/" method="post">
             <div class="input-group mb-40">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
@@ -235,7 +235,7 @@
             <h2>Sign Up</h2>
         </div>
 
-        <form action="Singin/" method="post">
+        <form action="/Fashion/Singin/" method="post">
             <div class="input-group mb-4">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-user-o"></i></span>
@@ -262,7 +262,7 @@
             </div>
 
             <div class="check-option mt-5">
-                <input type="checkbox" id="checkbox" class="mb-3"/ name="check">
+                <input type="checkbox" id="checkbox" class="mb-3" name="check">
                 <label for="checkbox" class="ml-3">Accept Terms & Conditions</label> <br>
             </div>
             <button type="submit" class="template-btn2 mt-5">Sign Up <span>&rharu;</span></button>
@@ -298,12 +298,13 @@
 </div>
 <!-- Login PopUp End -->
 
+
 <!-- navbar area starts -->
 <nav class="navbar navbar-area white navbar-expand-lg nav-style-02 nav-absolute">
     <div class="container-fluid nav-container">
         <div class="responsive-mobile-menu">
             <div class="logo-wrapper">
-                <a href="index-2.html" class="logo">
+                <a href="#" class="logo">
                     <img src='<c:url value="/resources/web/img/logo/white-logo.png"/>' alt="logo" style="background:black">
                     <h4>Manh <br>Nguyen</h4>
                 </a>
@@ -316,11 +317,11 @@
 
         <div class="collapse navbar-collapse" id="bizcoxx_main_menu">
             <ul class="navbar-nav">
-                <li class="menu-item-has-children ">
-                    <a href="#">Home</a>
+                <li>
+                    <a href="/Fashion/" >Home</a>
                 </li>
-                <li class="menu-item-has-children">
-               		 <a href="#">Shop</a>
+                <li>
+               		 <a href="/Fashion/shoppage/">Shop</a>
                 </li>
                 <li class="menu-item-has-children mega-menu-list">
                         <a href="#">Pages</a>
@@ -356,10 +357,10 @@
                 
                  <c:choose>
 			       	<c:when test="${dangnhap !=null}">
-			       		  <li>
+			       		  <li class="ml-3">
 			       		  	<a>${dangnhap}</a>
 			       		  </li>
-			       		  <li> <a href="Logout/"><i class="fa fa-sign-out" aria-hidden="true"></i></a>				 
+			       		  <li> <a href="/Fashion/Logout/"><i class="fa fa-sign-out" aria-hidden="true"></i></a>				 
 			       		  </li>  
 			       		 
 			       	</c:when>

@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.manhnguyen.entity.DanhMucSanPham;
 import com.manhnguyen.entity.MauSanPham;
@@ -41,12 +43,18 @@ public class ShoppageController {
 		List<MauSanPham> listcolor=colorService.colorList();
 		map.addAttribute("listcolor",listcolor);
 		// get list product
-		List<SanPham> listproduct=productService.getListProductShoppage();
+		List<SanPham> listproduct=productService.getListProductShoppage(2,1);
 		map.addAttribute("listproduct",listproduct);
+		// all item 
+		List<SanPham> listboss=productService.getListProductShoppage(-1,-1);
+		// sum page load product
+		double num =Math.ceil((double)listboss.size()/5);
+		map.addAttribute("num",num);
 		
 		
 		return"web/shop-page";
 		
 	}
+	
 
 }
