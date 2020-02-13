@@ -1,3 +1,4 @@
+<%@ include file="/WEB-INF/common/taglib.jsp" %>
 <div class="preloader" id="preloader">
     <div class="preloader-inner">
         <div class="spinner">
@@ -315,11 +316,11 @@
 
         <div class="collapse navbar-collapse" id="bizcoxx_main_menu">
             <ul class="navbar-nav">
-                <li class="menu-item-has-children current-menu-item">
+                <li class="menu-item-has-children ">
                     <a href="#">Home</a>
                 </li>
                 <li class="menu-item-has-children">
-                    <a href="#">New Arrivals</a> 
+               		 <a href="#">Shop</a>
                 </li>
                 <li class="menu-item-has-children mega-menu-list">
                         <a href="#">Pages</a>

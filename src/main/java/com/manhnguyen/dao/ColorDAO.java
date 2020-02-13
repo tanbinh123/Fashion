@@ -11,30 +11,23 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
 
-import com.manhnguyen.daoimpl.ProductImpl;
-import com.manhnguyen.entity.SanPham;
+import com.manhnguyen.daoimpl.ColorImpl;
+import com.manhnguyen.entity.MauSanPham;
 
 @Repository
 @Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class ProductDAO implements ProductImpl{
+public class ColorDAO implements ColorImpl {
 
 	@Autowired
 	SessionFactory sessionFactory;
 	@Transactional
-	public List<SanPham> getListProduct() {
+	public List<MauSanPham> colorList() {
+		
 		Session session=sessionFactory.getCurrentSession();
-		String sql="from SANPHAM Limit";
-		// load 4 product for home page 
-		List<SanPham> list= session.createQuery(sql).setFirstResult(0).setMaxResults(4).getResultList();
+		String sql="from MAUSANPHAM";
+		List<MauSanPham>list=session.createQuery(sql).getResultList();
+		// TODO Auto-generated method stub
 		return list;
 	}
-	@Transactional
-	public List<SanPham> getListProductShoppage() {
-		Session session=sessionFactory.getCurrentSession();
-		String sql="from SANPHAM";
-		List<SanPham> list= session.createQuery(sql).getResultList();
-		return list;
-	}
-	
 
 }

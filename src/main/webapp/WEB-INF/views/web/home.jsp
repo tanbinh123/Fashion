@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home Page 02</title>
+    <title>Home</title>
      <script src='<c:url value="/resources/web/js/jquery-2.2.4.min.js"/>'></script>
      <!-- favicon -->
      <link rel=icon href=favicon.png sizes="20x20" type="image/png">
@@ -114,9 +114,9 @@
                             </div>
                             <div class="banner-icon">
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-facebook-official"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="https://www.facebook.com/mmma2344"><i class="fa fa-facebook-official"></i></a></li>
+                                    <li><a href="https://www.instagram.com/nm_ha_13/"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -156,9 +156,9 @@
                             </div>
                             <div class="banner-icon">
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-facebook-official"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                   <li><a href="https://www.facebook.com/mmma2344"><i class="fa fa-facebook-official"></i></a></li>
+                                    <li><a href="https://www.instagram.com/nm_ha_13/"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -240,9 +240,9 @@
                             </div>
                             <div class="banner-icon">
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-facebook-official"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                   <li><a href="https://www.facebook.com/mmma2344"><i class="fa fa-facebook-official"></i></a></li>
+                                    <li><a href="https://www.instagram.com/nm_ha_13/"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -390,7 +390,7 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="single-cart-item">
                                 <div class="single-cart-image">
-                                    <img class="image-item-01 item-active" src='<c:url value="/resources/web/img/home-1/pick/${sanpham.getHinhsanpham()}"/>' alt="">
+                                    <img class="image-item-01 item-active" src='<c:url value="/resources/web/img/shop-page/${sanpham.getHinhsanpham()}"/>' alt="">
                                 </div>
                                 <span class="love-icon"><i class="fa fa-heart"></i></span>
     

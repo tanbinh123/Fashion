@@ -2,7 +2,7 @@
 .categories-area .single-item .item-image.cat-1{background-image:url("../img/home-1/category/cat-1.png")} 
 .categories-area .single-item .item-image.cat-2{background-image:url("../img/home-1/category/cat-2.png")}
 /*css tự định  */
- .img1{width: 204px;height:415px;transition:0.4s; }
+ .img1{width: 204px;height:415px;transition:0.6s; }
 .img1:hover{
 	height: 515px;
 	width: 304px;
