@@ -174,7 +174,7 @@
 
             <div class="col-lg-9">
                 <div class="shop-items-top d-flex justify-content-between">
-                    <div class="left"><span>${fn:length(listproduct)} Items</span></div>
+                    <div class="left"><span>${fn:length(listboss)} Items</span></div>
                     <div class="dropdown">
                         <button class="drop-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Sort by
@@ -227,8 +227,8 @@
                                     </div>
                                 </div>
     
-                                <div class="single-cart-button text-center">
-                                    <a href="#" class="cart-button floating-icon-1">add to cart</a>
+                                <div class="row justify-content-center">
+                                    <a href="#" class="cart-button floating-icon-1 btn btn-secondary">Add to cart</a>
                                 </div>
                             </div>
                         </div>
@@ -240,6 +240,7 @@
 
                                      
                     </div>
+                    <!-- end row  -->
                 </div>
                 <!-- pagging start  -->
                 <!-- load ajax  -->
@@ -343,6 +344,7 @@
     <script src='<c:url value="/resources/web/js/datepicker.min.js"/>'></script>
     <script src='<c:url value="/resources/web/js/datepicker-en.js"/>'></script>
     <script src='<c:url value="/resources/web/js/main.js"/>'></script>
+    <script src='<c:url value="/resources/web/js/customs.js"/>'></script>
 
 </body>
 

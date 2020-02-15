@@ -43,12 +43,13 @@ public class ShoppageController {
 		List<MauSanPham> listcolor=colorService.colorList();
 		map.addAttribute("listcolor",listcolor);
 		// get list product
-		List<SanPham> listproduct=productService.getListProductShoppage(2,1);
+		List<SanPham> listproduct=productService.getListProductShoppage(2,0);
 		map.addAttribute("listproduct",listproduct);
 		// all item 
-		List<SanPham> listboss=productService.getListProductShoppage(-1,-1);
+		List<SanPham> listboss=productService.getListProductShoppage(-1,0);
+		map.addAttribute("listboss",listboss);
 		// sum page load product
-		double num =Math.ceil((double)listboss.size()/5);
+		double num =Math.ceil((double)listboss.size()/9);
 		map.addAttribute("num",num);
 		
 		
