@@ -57,18 +57,18 @@
                         <div class="slider-right d-md-flex">
                             <div class="single-image single-image-1 mr-5">
                                 <div class="image-bg image-5"></div>
-                                <div class="hover-state">
+                               <!--  <div class="hover-state">
                                     <h5><a href="#">Shop for Men</a></h5>
                                     <a href="#">Explore Collection <span>&rharu;</span></a>
-                                </div>
+                                </div> -->
                             </div>
                             
                             <div class="single-image single-image-2">
                                 <div class="image-bg image-6"></div>
-                                <div class="hover-state">
+                                <!-- <div class="hover-state">
                                     <h5><a href="#">Shop for Women</a></h5>
                                     <a href="#">Explore Collection <span>&rharu;</span></a>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="banner-icon">
                                 <ul>
@@ -99,18 +99,18 @@
                         <div class="slider-right d-md-flex">
                             <div class="single-image single-image-1 mr-5">
                                 <div class="image-bg image-1"></div>
-                                <div class="hover-state">
+                                <!-- <div class="hover-state">
                                     <h5><a href="#">Shop for Men</a></h5>
                                     <a href="#">Explore Collection <span>&rharu;</span></a>
-                                </div>
+                                </div> -->
                             </div>
                             
                             <div class="single-image single-image-2">
                                 <div class="image-bg image-2"></div>
-                                <div class="hover-state">
+                                <!-- <div class="hover-state">
                                     <h5><a href="#">Shop for Women</a></h5>
                                     <a href="#">Explore Collection <span>&rharu;</span></a>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="banner-icon">
                                 <ul>
@@ -141,18 +141,18 @@
                         <div class="slider-right d-md-flex">
                             <div class="single-image single-image-1 mr-5">
                                 <div class="image-bg image-3"></div>
-                                <div class="hover-state">
+                               <!--  <div class="hover-state">
                                     <h5><a href="#">Shop for Men</a></h5>
                                     <a href="#">Explore Collection <span>&rharu;</span></a>
-                                </div>
+                                </div> -->
                             </div>
                             
                             <div class="single-image single-image-2">
                                 <div class="image-bg image-4"></div>
-                                <div class="hover-state">
+                                <!-- <div class="hover-state">
                                     <h5><a href="#">Shop for Women</a></h5>
                                     <a href="#">Explore Collection <span>&rharu;</span></a>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="banner-icon">
                                 <ul>
@@ -183,18 +183,18 @@
                         <div class="slider-right d-md-flex">
                             <div class="single-image single-image-1 mr-5">
                                 <div class="image-bg image-7"></div>
-                                <div class="hover-state">
+                               <!--  <div class="hover-state">
                                     <h5><a href="#">Shop for Men</a></h5>
                                     <a href="#">Explore Collection <span>&rharu;</span></a>
-                                </div>
+                                </div> -->
                             </div>
                             
                             <div class="single-image single-image-2">
                                 <div class="image-bg image-8"></div>
-                                <div class="hover-state">
+                               <!--  <div class="hover-state">
                                     <h5><a href="#">Shop for Women</a></h5>
                                     <a href="#">Explore Collection <span>&rharu;</span></a>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="banner-icon">
                                 <ul>
@@ -225,18 +225,18 @@
                         <div class="slider-right d-md-flex">
                             <div class="single-image single-image-1 mr-5">
                                 <div class="image-bg image-9"></div>
-                                <div class="hover-state">
+                               <!--  <div class="hover-state">
                                     <h5><a href="#">Shop for Men</a></h5>
                                     <a href="#">Explore Collection <span>&rharu;</span></a>
-                                </div>
+                                </div> -->
                             </div>
                             
                             <div class="single-image single-image-2">
                                 <div class="image-bg image-10"></div>
-                                <div class="hover-state">
+                                <!-- <div class="hover-state">
                                     <h5><a href="#">Shop for Women</a></h5>
                                     <a href="#">Explore Collection <span>&rharu;</span></a>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="banner-icon">
                                 <ul>
@@ -302,16 +302,18 @@
                 <div class="categories-item d-lg-flex justify-content-end">
                 <!-- Start load category -->
                 <c:forEach var="category" items="${listcategory}">
+                <a href="/Fashion/shoppage/${category.getMadanhmuc()}/${category.getTendanhmuc()}">
                 	 <div class="single-item active fadeIn mb-5 mb-lg-0" data-wow-duration=".8s" data-wow-delay=".2s">
                         <div class="item-image "><!-- cat-1 -->
                         	<img class="img1"alt="" src='<c:url value="/resources/web/img/home-1/category/${category.getHinhdanhmuc() }"/>'>
                         </div>
                         <br/>
                         <div class="item-content">
-                            <h5><a href="shop-page.html">${category.getTendanhmuc()}</a></h5>
-                            <a href="shop-page.html">Explore Collection </a>
+                            <h5><a>${category.getTendanhmuc()}</a></h5>
+                            <a>Explore Collection </a>
                         </div>
                     </div>
+                    </a>
                 </c:forEach>     
                 <!--End load category  -->           
                 </div>
@@ -386,12 +388,17 @@
                 <div class="tab-one-content lost active">
                     <div class="row">
                         <!-- procduct start  -->
+                        <a href="#">
                         <c:forEach var="sanpham" items="${list}">
                         <div class="col-lg-3 col-md-6">
+                    <!-- dẫn đến item shoppage -->   
+                     <a href="#">
                             <div class="single-cart-item">
+                             
                                 <div class="single-cart-image">
                                     <img class="image-item-01 item-active" src='<c:url value="/resources/web/img/shop-page/${sanpham.getHinhsanpham()}"/>' alt="">
                                 </div>
+                       		  
                                 <span class="love-icon"><i class="fa fa-heart"></i></span>
     
                                 <div class="single-cart-content">
@@ -424,13 +431,16 @@
                                     </div>
                                 </div>
     
-                                <div class="single-cart-button text-center">
+                               <!--  <div class="single-cart-button text-center">
                                     <a href="#" class="cart-button floating-icon-1">add to cart</a>
-                                </div>
+                                </div> -->
                             </div>
+                            </a>
+                       
                         </div>
 						</c:forEach>
-                     <!-- product end  -->    
+                     <!-- product end  -->  
+                          </a>  
             </div>
     
             <div class="text-center">

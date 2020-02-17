@@ -219,9 +219,9 @@
                                     </div>
                                 </div>
     
-                                <div class="row justify-content-center">
+                              <!--   <div class="row justify-content-center">
                                     <a href="#" class="cart-button floating-icon-1 btn btn-secondary">Add to cart</a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 						</c:forEach>

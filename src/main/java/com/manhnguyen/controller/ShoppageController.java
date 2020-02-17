@@ -70,12 +70,12 @@ public class ShoppageController {
 		map.addAttribute("categoryname",tendanhmuc);
 		List<SanPham>list_category=productService.getList_Category(id);
 		map.addAttribute("listproduct",list_category);
-		List<SanPham> listboss=productService.getListProductShoppage(-1,0);
+		List<SanPham> listboss=productService.getList_Category(id);
 		map.addAttribute("listboss",listboss);
 		// sum page load product
 		double num =Math.ceil((double)listboss.size()/9);
 		map.addAttribute("num",num);
-		
+
 		return "web/shop-page";
 	}
 	

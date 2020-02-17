@@ -51,9 +51,11 @@ public class APIController {
 					"<span class='current-price'>$"+sanPham.getGiatien()+"</span>" + 
 					"</div>"+
 					"</div>"+
-					"<div class='row justify-content-center'>" + 
-					"<a href='#'class='cart-button floating-icon-1 btn btn-secondary'>Add to cart</a>" + 
-					"</div>"+ 
+					/*
+					 * "<div class='row justify-content-center'>" +
+					 * "<a href='#'class='cart-button floating-icon-1 btn btn-secondary'>Add to cart</a>"
+					 * + "</div>"+
+					 */
 					"</div>" + 
 					"</div>";
 		}
