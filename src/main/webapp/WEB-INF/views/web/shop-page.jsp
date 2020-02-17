@@ -127,7 +127,7 @@
                         </div>
                         <ul>
                         <c:forEach var="listcate" items="${listcategory}">
-                        	  <li><a href="#">${listcate.getTendanhmuc()}</a></li>
+                        	  <li><a href="/Fashion/shoppage/${listcate.getMadanhmuc()}/${listcate.getTendanhmuc()}">${listcate.getTendanhmuc()}</a></li>
                         </c:forEach>
                         </ul>
                     </div>
@@ -175,15 +175,7 @@
             <div class="col-lg-9">
                 <div class="shop-items-top d-flex justify-content-between">
                     <div class="left"><span>${fn:length(listboss)} Items</span></div>
-                    <div class="dropdown">
-                        <button class="drop-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Sort by
-                        </button>                  
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-                            <a class="dropdown-item" href="/Fashion/shoppage/">Title</a>
-                            <a class="dropdown-item" href="/Fashion/shoppage/">Price</a>
-                        </div> 
-                    </div>
+                   
                 </div>
 
                 <div class="shop-items">

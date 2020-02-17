@@ -37,28 +37,21 @@ public class ProductDAO implements ProductImpl{
 			String sql="from SANPHAM";
 			list= session.createQuery(sql).getResultList();
 		}
-		if(id==0) {
-			Session session=sessionFactory.getCurrentSession();
-			String sql="from SANPHAM limit";
-			list= session.createQuery(sql).setFirstResult(start).setMaxResults(9).getResultList();
-			
-			
-		}
-		if(id==1) {
-			Session session=sessionFactory.getCurrentSession();
-			String sql="from SANPHAM order by GIATIEN asc";
-			list= session.createQuery(sql).setFirstResult(start).setMaxResults(9).getResultList();
-			
-		}
 		if(id==2) {
 			Session session=sessionFactory.getCurrentSession();
 			String sql="from SANPHAM order by TENSANPHAM asc";
 			list= session.createQuery(sql).setFirstResult(start).setMaxResults(9).getResultList();
 			
-			
 		}
 		return list;
 		
+	}
+	@org.springframework.transaction.annotation.Transactional
+	public List<SanPham> getList_Category(int id) {
+		Session session=sessionFactory.getCurrentSession();
+		String sql="from SANPHAM sp where sp. danhMucSanPham.madanhmuc='"+id+"'";
+		List<SanPham>list=session.createQuery(sql).getResultList();
+		return list;
 	}
 	
 

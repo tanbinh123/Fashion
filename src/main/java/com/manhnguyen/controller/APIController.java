@@ -57,10 +57,9 @@ public class APIController {
 					"</div>" + 
 					"</div>";
 		}
-		
-		
 		return html;
 		
 	}
+
 
 }

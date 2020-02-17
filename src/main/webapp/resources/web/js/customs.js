@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	//phân trang
 	$("body").on("click",".page-item",function(){
 		$(".page-item").removeClass("active");
 		$(this).addClass("active");
@@ -19,5 +20,7 @@ $(document).ready(function(){
 			}	
 	})
 	})
+	
 
+	
 });

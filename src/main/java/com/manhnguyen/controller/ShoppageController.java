@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -55,6 +56,27 @@ public class ShoppageController {
 		
 		return"web/shop-page";
 		
+	}
+	@GetMapping("{id}/{tendanhmuc}")
+	public String getProductCategory(ModelMap map,@PathVariable int id,@PathVariable String tendanhmuc) {
+		List<DanhMucSanPham> list=categoryService.CategoryList();
+		map.addAttribute("listcategory", list);
+		// get list size product
+		List<SizeSanPham>listsize=sizeService.getSizeProduct();
+		map.addAttribute("listsize",listsize);
+		// get list color product
+		List<MauSanPham> listcolor=colorService.colorList();
+		map.addAttribute("listcolor",listcolor);
+		map.addAttribute("categoryname",tendanhmuc);
+		List<SanPham>list_category=productService.getList_Category(id);
+		map.addAttribute("listproduct",list_category);
+		List<SanPham> listboss=productService.getListProductShoppage(-1,0);
+		map.addAttribute("listboss",listboss);
+		// sum page load product
+		double num =Math.ceil((double)listboss.size()/9);
+		map.addAttribute("num",num);
+		
+		return "web/shop-page";
 	}
 	
 

@@ -21,5 +21,9 @@ public class ProductService implements ProductImpl{
 		// TODO Auto-generated method stub
 		return productDAO.getListProductShoppage(id,start);
 	}
+	public List<SanPham> getList_Category(int id) {
+		// TODO Auto-generated method stub
+		return productDAO.getList_Category(id);
+	}
 
 }
