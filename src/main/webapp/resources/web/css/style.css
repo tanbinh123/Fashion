@@ -7,6 +7,13 @@
 	height: 515px;
 	width: 304px;
 }
+.btn-secondary{
+	opacity: 0;
+	transition:0.4s;
+}
+.btn-secondary:hover{
+	opacity: 0.8;
+}
 
 /*end  */
 .categories-area .single-item .item-image.cat-3{background-image:url("../img/home-1/category/cat-3.png")}
