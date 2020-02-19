@@ -47,27 +47,27 @@
                 <div class="cart-banner-left">
                     <div class="left-title mb-5">
                         <h3>Summer Collection</h3>
-                        <h4>Velvet Red Dress</h4>
+                        <h4>${product.getTensanpham()}</h4>
                     </div>
                     <div class="price mb-5">
-                        <h2>$90,00</h2>
+                        <h2>$ ${product.getGiatien()}</h2>
                     </div>
                     <div class="color mb-5">
                         <h4>Color</h4>
                         <ul class="mt-3">
-                            <li class="active"><span class="color1"></span></li>
-                            <li><span class="color2"></span></li>
-                            <li><span class="color3"></span></li>
-                            <li><span class="color4"></span></li>
+                         <c:forEach var="list" items="${product.getChiTietSanPhams()}">
+                        	<li><span class="color${fn:toLowerCase(list.getMauSanPham().getMamau())}" id="${list.getMauSanPham().getMamau()}"></span>${list.getMauSanPham().getTenmau()}</li>
+                       		
+                        </c:forEach>
                         </ul>
-                    </div>
+                    </div> 
+              
                     <div class="size mb-5">
                         <h4>Select your size</h4>
                         <ul>
-                            <li><span>xs</span></li>
-                            <li><span>s</span></li>
-                            <li><span>m</span></li>
-                            <li><span>L</span></li>
+                         <c:forEach var="chitietsanpham" items="${product.getChiTietSanPhams()}"> 
+                        	<li class="size"data-size="${chitietsanpham.getSizeSanPham().getMasize()}"><span> ${chitietsanpham.getSizeSanPham().getSize()} </span></li>											
+                      	</c:forEach>
                         </ul>
                     </div>
                     <div class="quantity mb-5">
@@ -78,28 +78,12 @@
                             <li><span><i class="ti-plus"></i></span></li>
                         </ul>
                     </div>
-                    <div class="left-image d-flex small-slider">
-                        <div class="image image-1 mr-4">
-                            <div class="hover-state">
-                                <a href='<c:url value="/resources/web/img/cart-page/banner-bg.png"/>'><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                        <div class="image image-2 mr-4">
-                            <div class="hover-state">
-                                <a href='<c:url value="/resources/web/img/cart-page/banner-bg2.png"/>'><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                        <div class="image image-3">
-                            <div class="hover-state">
-                                <a href='<c:url value="/resources/web/img/cart-page/banner-bg3.png"/>'><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                  
                 </div>
             </div>
             <div class="col-lg-4 order-1 order-lg-2">
                 <div class="banner-image big-slider">
-                    <div class="cart-page-banner-bg"></div>
+                    <div class="cart-page-banner-bg" style="background-image:url('<c:url value="/resources/web/img/shop-page/${product.getHinhsanpham()}"/>'); "></div>
                 </div>
             </div>
             <div class="col-lg-5 align-self-center order-3">
@@ -144,12 +128,7 @@
                         </div>
                         <div class="tab-second-content lost active">
                             <ul>
-                                <li>V-neck</li>
-                                <li>Zip fastening</li>
-                                <li>Sleeveless style</li>
-                                <li>Functional pockets</li>
-                                <li>Regular fit</li>
-                                <li>Just select your usual size</li>
+                                <li>${product.getMota()}</li>
                             </ul>
                         </div>
                         <div class="tab-three-content lost">
@@ -190,200 +169,6 @@
     </div>
 </section>
 <!-- Banner End -->
-
-<!-- Related Section Starts -->
-<section class="related-section section-padding-top3">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2>Related</h2>
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-lg-9">
-                <div class="related-slider owl-carousel">
-                    <div class="single-slide">
-                        <div class="single-cart-item active">
-                                <div class="single-cart-image">
-                                        <img class="image-item-01 item-active" src='<c:url value="/resources/web/img/home-1/pick/pick-1.png" />'>
-                                        <img class="image-item-02" src='<c:url value="/resources/web/img/shop-page/item7.png" />'>
-                                        <div class="image-dots">
-                                        <div class="dot-01"></div>
-                                        <div class="dot-02 active"></div>
-                                    </div>
-                                    </div>
-                                    <span class="love-icon"><i class="fa fa-heart"></i></span>
-
-                            <div class="single-cart-content">
-                                <div class="cart-content-left">
-                                    <ul class="cart-rating">
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li class="diff-color"><i class="fa fa-star"></i></li>
-                                    </ul>
-                                    <h5>Belted Chino Trousers</h5>
-                                    <ul class="cart-size">
-                                        <li><span>xs</span></li>
-                                        <li class="active"><span>s</span></li>
-                                        <li><span>m</span></li>
-                                        <li><span>l</span></li>
-                                        <li><span>xl</span></li>
-                                    </ul>
-                                </div>
-
-                                <div class="cart-content-right">
-                                    <span class="current-price">$45.99</span>
-                                    <span class="old-price">$99.10</span>
-                                </div>
-                            </div>
-
-                            <div class="single-cart-button">
-                                <a href="#" class="cart-button floating-icon-1">add to cart</a>
-                                <a href="#" class="compare-button">compare</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="single-slide">
-                            <div class="single-cart-item">
-                                    <div class="single-cart-image">
-                                            <img class="image-item-01 item-active" src='<c:url value="/resources/web/img/home-1/pick/pick-2.jpg" />'>
-                                            <img class="image-item-02" src='<c:url value="/resources/web/img/shop-page/item7.png" />'>
-                                            <div class="image-dots">
-                                        <div class="dot-01"></div>
-                                        <div class="dot-02 active"></div>
-                                    </div>
-                                        </div>
-                                        <span class="love-icon"><i class="fa fa-heart"></i></span>
-        
-                                    <div class="single-cart-content">
-                                        <div class="cart-content-left">
-                                            <ul class="cart-rating">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li class="diff-color"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                            <h5>Belted Chino Trousers</h5>
-                                            <ul class="cart-size">
-                                                <li><span>xs</span></li>
-                                                <li class="active"><span>s</span></li>
-                                                <li><span>m</span></li>
-                                                <li><span>l</span></li>
-                                                <li><span>xl</span></li>
-                                            </ul>
-                                        </div>
-        
-                                        <div class="cart-content-right">
-                                            <span class="current-price">$45.99</span>
-                                            <span class="old-price">$99.10</span>
-                                        </div>
-                                    </div>
-        
-                                    <div class="single-cart-button">
-                                        <a href="#" class="cart-button floating-icon-1">add to cart</a>
-                                        <a href="#" class="compare-button">compare</a>
-                                    </div>
-                                </div>
-                    </div>
-
-                    <div class="single-slide">
-                            <div class="single-cart-item">
-                                    <div class="single-cart-image">
-                                            <img class="image-item-01 item-active" src='<c:url value="/resources/web/img/home-1/pick/pick-3.jpg" />'>
-                                            <img class="image-item-02" src='<c:url value="/resources/web/img/shop-page/item7.png" />'>
-                                            <div class="image-dots">
-                                        <div class="dot-01"></div>
-                                        <div class="dot-02 active"></div>
-                                    </div>
-                                        </div>
-                                        <span class="love-icon"><i class="fa fa-heart"></i></span>
-        
-                                    <div class="single-cart-content">
-                                        <div class="cart-content-left">
-                                            <ul class="cart-rating">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li class="diff-color"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                            <h5>Belted Chino Trousers</h5>
-                                            <ul class="cart-size">
-                                                <li><span>xs</span></li>
-                                                <li class="active"><span>s</span></li>
-                                                <li><span>m</span></li>
-                                                <li><span>l</span></li>
-                                                <li><span>xl</span></li>
-                                            </ul>
-                                        </div>
-        
-                                        <div class="cart-content-right">
-                                            <span class="current-price">$45.99</span>
-                                            <span class="old-price">$99.10</span>
-                                        </div>
-                                    </div>
-        
-                                    <div class="single-cart-button">
-                                        <a href="#" class="cart-button floating-icon-1">add to cart</a>
-                                        <a href="#" class="compare-button">compare</a>
-                                    </div>
-                                </div>
-                    </div>
-
-                    <div class="single-slide">
-                            <div class="single-cart-item">
-                                    <div class="single-cart-image">
-                                            <img class="image-item-01 item-active" src='<c:url value="/resources/web/img/home-1/pick/pick-4.png" />'>
-                                            <img class="image-item-02" src='<c:url value="/resources/web/img/shop-page/item7.png" />'>
-                                            <div class="image-dots">
-                                        <div class="dot-01"></div>
-                                        <div class="dot-02 active"></div>
-                                    </div>
-                                        </div>
-                                        <span class="love-icon"><i class="fa fa-heart"></i></span>
-        
-                                    <div class="single-cart-content">
-                                        <div class="cart-content-left">
-                                            <ul class="cart-rating">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li class="diff-color"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                            <h5>Belted Chino Trousers</h5>
-                                            <ul class="cart-size">
-                                                <li><span>xs</span></li>
-                                                <li class="active"><span>s</span></li>
-                                                <li><span>m</span></li>
-                                                <li><span>l</span></li>
-                                                <li><span>xl</span></li>
-                                            </ul>
-                                        </div>
-        
-                                        <div class="cart-content-right">
-                                            <span class="current-price">$45.99</span>
-                                            <span class="old-price">$99.10</span>
-                                        </div>
-                                    </div>
-        
-                                    <div class="single-cart-button">
-                                        <a href="#" class="cart-button floating-icon-1">add to cart</a>
-                                        <a href="#" class="compare-button">compare</a>
-                                    </div>
-                                </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Related Section End -->
-
 <!-- Instagram Starts -->
 <section class="instagram-area">
     <div class="container-fluid">

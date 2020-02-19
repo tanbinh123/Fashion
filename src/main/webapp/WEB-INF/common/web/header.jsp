@@ -342,7 +342,7 @@
                         </div>
                     </li>
                 <li>
-                    <a href="contact-us-page.html">Contact Us</a>
+                    <a href="/Fashion/Contact/">Contact Us</a>
                 </li>
             </ul>
         </div>

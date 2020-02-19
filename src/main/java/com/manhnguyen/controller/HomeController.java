@@ -63,6 +63,12 @@ public class HomeController {
 	
 		return"web/home";
 	}
+	@GetMapping("Contact/")
+	public String conTact(ModelMap map) {
+		
+		return "web/about-page";
+		
+	}
 	@GetMapping("Logout/")
 	public String Logout(ModelMap map,HttpSession session,SessionStatus sessionStatus) {
 		session.removeAttribute("dangnhap");

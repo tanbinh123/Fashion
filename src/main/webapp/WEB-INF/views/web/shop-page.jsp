@@ -181,11 +181,14 @@
                 <div class="shop-items">
                     <div class="row">
                      <!-- procduct start  -->
+                     	
                         <c:forEach var="sanpham" items="${listproduct}">
+                        
                         <div class="col-lg-4 col-md-6">
                             <div class="single-cart-item">
                                 <div class="single-cart-image">
-                                    <img class="image-item-01 item-active" src='<c:url value="/resources/web/img/shop-page/${sanpham.getHinhsanpham()}"/>' alt="">
+                                     <a href="/Fashion/shoppage/${sanpham.getMasanpham()}"><img class="image-item-01 item-active" src='<c:url value="/resources/web/img/shop-page/${sanpham.getHinhsanpham()}"/>' alt="">
+                                    </a>
                                 </div>
                                 <span class="love-icon"><i class="fa fa-heart"></i></span>
     
@@ -219,11 +222,12 @@
                                     </div>
                                 </div>
     
-                              <div class="row justify-content-center">
+                            <!--   <div class="row justify-content-center">
                                     <a href="#" class="cart-button floating-icon-1 btn btn-secondary">Add to cart</a>
-                                </div> 
+                                </div>  -->
                             </div>
                         </div>
+                   
 						</c:forEach>
 						
                      <!-- product end  -->    

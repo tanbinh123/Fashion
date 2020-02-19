@@ -53,6 +53,13 @@ public class ProductDAO implements ProductImpl{
 		List<SanPham>list=session.createQuery(sql).getResultList();
 		return list;
 	}
+	@Transactional
+	public SanPham getDetail(int id) {
+		Session session=sessionFactory.getCurrentSession();
+		String sql="from SANPHAM where MASANPHAM='"+id+"'";
+		SanPham product=(SanPham) session.createQuery(sql).getSingleResult();
+		return product;
+	}
 	
 
 }
