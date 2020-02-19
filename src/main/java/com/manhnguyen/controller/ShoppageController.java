@@ -78,10 +78,10 @@ public class ShoppageController {
 
 		return "web/shop-page";
 	}
-	@GetMapping("{id}")
-	public String getProductDetail(ModelMap map,@PathVariable int id) {
+	@GetMapping("detail/{idproduct}")
+	public String getProductDetail(ModelMap map,@PathVariable int idproduct) {
 		
-		SanPham product=productService.getDetail(id);
+		SanPham product=productService.getDetail(idproduct);
 		map.addAttribute("product",product);
 		return"web/cart-page";
 	}
