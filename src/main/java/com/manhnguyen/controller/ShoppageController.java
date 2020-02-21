@@ -85,6 +85,24 @@ public class ShoppageController {
 		map.addAttribute("product",product);
 		return"web/cart-page";
 	}
+	@GetMapping("search")
+	public String Search(ModelMap map,@RequestParam String search) {
+		List<SanPham>list=productService.search(search);
+		map.addAttribute("listproduct",list);
+		// get list category 
+		List<DanhMucSanPham> list1=categoryService.CategoryList();
+				map.addAttribute("listcategory", list1);
+				// get list size product
+		List<SizeSanPham>listsize=sizeService.getSizeProduct();
+				map.addAttribute("listsize",listsize);
+				// get list color product
+		List<MauSanPham> listcolor=colorService.colorList();
+				map.addAttribute("listcolor",listcolor);
+		map.addAttribute("listboss",list);
+		double num =Math.ceil((double)list.size()/9);
+		map.addAttribute("num",num);
+		return "web/shop-page";
+	}
 	
 
 }

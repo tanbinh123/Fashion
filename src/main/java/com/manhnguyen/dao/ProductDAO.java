@@ -60,6 +60,15 @@ public class ProductDAO implements ProductImpl{
 		SanPham product=(SanPham) session.createQuery(sql).getSingleResult();
 		return product;
 	}
+	@Transactional 
+	public List<SanPham> search(String key) {
+		Session session=sessionFactory.getCurrentSession();
+		String sql="from SANPHAM where TENSANPHAM like '%"+key+"%' or GIATIEN like '%"+key+"%' or GIANHCHO like'%"+key
+				+"%' or MOTA like '%"+key+"%'";
+		List<SanPham>list=session.createQuery(sql).getResultList();
+		
+		return list;
+	}
 	
 
 }

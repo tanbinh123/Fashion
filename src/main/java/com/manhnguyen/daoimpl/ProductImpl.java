@@ -9,5 +9,6 @@ public interface ProductImpl {
 	public List<SanPham> getListProductShoppage(int id,int start);
 	public List<SanPham> getList_Category(int id);
 	public SanPham getDetail(int id);
+	public List<SanPham> search(String key);
 
 }

@@ -40,25 +40,25 @@
             <div class="col-lg-12">
                 <div class="contact-title section-padding-top2">
                     <h2>Contact us</h2>
-                    <h3>Hello. Let’s get in touch</h3>
+                    <h3>Hello</h3>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-7">
                 <div class="contact-bg">
-                    <form action="#">
+                    <form action="/Fashion/sendContact/" method="post">
                         <h6>Full Name</h6>
-                        <input type="text" placeholder="e.i Annastasia Alatore">
+                        <input type="text" placeholder="e.i Annastasia Alatore" name="fullname">
 
                         <h6>Email Address</h6>
-                        <input type="email" placeholder="e.i User@gmail.com">
+                        <input type="email" placeholder="e.i User@gmail.com" name="email">
 
                         <h6>Reason For Contact</h6>
-                        <input type="text" id="reason">
+                        <input type="text" id="reason" name="reason">
 
                         <h6>Message</h6>
-                        <textarea cols="30" rows="10"></textarea>
+                        <textarea cols="30" rows="10" name="message"></textarea>
 
                         <button type="submit" class="template-btn2 off1">Add Your Comment <span>&rharu;</span></button>
                     </form>

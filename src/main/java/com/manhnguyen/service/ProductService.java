@@ -29,5 +29,9 @@ public class ProductService implements ProductImpl{
 		// TODO Auto-generated method stub
 		return productDAO.getDetail(id);
 	}
+	public List<SanPham> search(String key) {
+		// TODO Auto-generated method stub
+		return productDAO.search(key);
+	}
 
 }

@@ -113,10 +113,10 @@
 <section class="shop-content">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3">
+       <div class="col-lg-3">
                 <div class="shop-sidebar">
-                    <form action="#">
-                        <input type="email" class="search-input" placeholder="Search" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search'" required>
+                    <form action="/Fashion/shoppage/search" method="get">
+                        <input type="text" class="search-input" placeholder="Search" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search'" name="search">
                         <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
                     </form>
 
@@ -171,7 +171,7 @@
                     </div>
                 </div>
             </div>
-
+         
             <div class="col-lg-9">
                 <div class="shop-items-top d-flex justify-content-between">
                     <div class="left"><span>${fn:length(listboss)} Items</span></div>

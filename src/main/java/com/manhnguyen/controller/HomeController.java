@@ -18,11 +18,13 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.manhnguyen.entity.ChucVu;
+import com.manhnguyen.entity.Contact;
 import com.manhnguyen.entity.DanhMucSanPham;
 import com.manhnguyen.entity.KhuyenMai;
 import com.manhnguyen.entity.NhanVien;
 import com.manhnguyen.entity.SanPham;
 import com.manhnguyen.service.CategoryService;
+import com.manhnguyen.service.ContactService;
 import com.manhnguyen.service.DiscountService;
 import com.manhnguyen.service.EmployeeService;
 import com.manhnguyen.service.ProductService;
@@ -42,6 +44,8 @@ public class HomeController {
 	
 	@Autowired
 	DiscountService discountService;
+	@Autowired
+	ContactService contactService;
 	
 	@GetMapping
 	public String DefaultHome(ModelMap map,HttpSession httpSession) {
@@ -66,8 +70,20 @@ public class HomeController {
 	@GetMapping("Contact/")
 	public String conTact(ModelMap map) {
 		
-		return "web/about-page";
+		return "web/contact-us-page";
 		
+	}
+	@PostMapping("sendContact/")
+	public String sendContact(@RequestParam String fullname,@RequestParam String email,@RequestParam String reason,@RequestParam String message) {
+		if(reason!="" && message!="") {
+			Contact contact=new Contact();
+			contact.setFullname(fullname);
+			contact.setEmail(email);
+			contact.setMessage(message);
+			contact.setReason(reason);
+			contactService.saveContact(contact);
+		}
+		return "redirect:/";
 	}
 	@GetMapping("Logout/")
 	public String Logout(ModelMap map,HttpSession session,SessionStatus sessionStatus) {

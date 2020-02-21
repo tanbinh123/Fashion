@@ -12,9 +12,9 @@
 <!-- search Popup -->
 <div class="body-overlay" id="body-overlay"></div>
 <div class="search-popup" id="search-popup">
-    <form action="https://codingeek.net/html/roberto-ferracini/index.html" class="search-form">
+    <form action="/Fashion/shoppage/search" class="search-form">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Here'" required>
+            <input type="text" class="form-control" placeholder="Search" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Here'" name="search">
         </div>
         <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
     </form>
