@@ -47,34 +47,38 @@
                 <div class="cart-banner-left">
                     <div class="left-title mb-5">
                         <h3>Summer Collection</h3>
-                        <h4>${product.getTensanpham()}</h4>
+                        <h4 id="nameproduct">${product.getTensanpham()}</h4>
                     </div>
                     <div class="price mb-5">
-                        <h2>$ ${product.getGiatien()}</h2>
+                        <h2 id="priceproduct">$ ${product.getGiatien()}</h2>
                     </div>
                     <div class="color mb-5">
-                        <h4>Color</h4>
+                        <h4>Color and Size</h4>
                         <ul class="mt-3">
                          <c:forEach var="list" items="${product.getChiTietSanPhams()}">
-                        	<li><span class="color${fn:toLowerCase(list.getMauSanPham().getMamau())}" id="${list.getMauSanPham().getMamau()}"></span>${list.getMauSanPham().getTenmau()}</li>
-                       		
+							 <label class="radio-inline ">
+							  <li><input type="radio" name="rd" value="${list.getMauSanPham().getMamau()}" class="color${fn:toLowerCase(list.getMauSanPham().getMamau())}"  >${list.getMauSanPham().getTenmau()}</li>				
+							</label>
                         </c:forEach>
                         </ul>
                     </div> 
               
-                    <div class="size mb-5">
+                   <div class="size mb-5">
                         <h4>Select your size</h4>
                         <ul>
+                       
                          <c:forEach var="chitietsanpham" items="${product.getChiTietSanPhams()}"> 
-                        	<li class="size"data-size="${chitietsanpham.getSizeSanPham().getMasize()}"><span> ${chitietsanpham.getSizeSanPham().getSize()} </span></li>											
+                         	<label class="radio-inline">
+                        	<li><input type="radio" name="rdsize" class="size" value="${chitietsanpham.getSizeSanPham().getMasize()}"><span> ${chitietsanpham.getSizeSanPham().getSize()} </span></li>								
+                      		</label>
                       	</c:forEach>
                         </ul>
-                    </div>
+                    </div> 
                     <div class="quantity mb-5">
                         <h4>Quantity</h4>
                         <ul>
                             <li><span><i class="ti-minus"></i></span></li>
-                            <li><span>4</span></li>
+                            <li><span class="val">1</span></li>
                             <li><span><i class="ti-plus"></i></span></li>
                         </ul>
                     </div>
@@ -242,6 +246,7 @@
     <script src='<c:url value="/resources/web/js/datepicker.min.js"/>'></script>
     <script src='<c:url value="/resources/web/js/datepicker-en.js"/>'></script>
     <script src='<c:url value="/resources/web/js/main.js"/>'></script>
+    <script src='<c:url value="/resources/web/js/customs.js"/>'></script>
 
 </body>
 

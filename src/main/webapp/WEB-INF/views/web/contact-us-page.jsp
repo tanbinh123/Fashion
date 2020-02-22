@@ -69,7 +69,7 @@
                     <div class="contact-address">
                         <div class="single-part">
                             <h6>In The Bay Area?</h6>
-                            <p>Los Angeles,<br> 23 Valencia Street<br> America</p>
+                            <p>Ho Chi Minh city,<br> Go Vap <br> Viet Nam</p>
                         </div>
 
                         <div class="single-part mt-70">
@@ -79,7 +79,7 @@
                         
                         <div class="single-part mt-70">
                             <h6>Support?</h6>
-                            <p>robertoferracni@support.com<br> +26 736 32849</p>
+                            <p>manhnguyen130399@gmail.com<br> +0943 043 284</p>
                         </div>
                         <div class="single-part-img mt-70">
                             <img src='<c:url value="/resources/web/img/contact-us-page/contact-img.jpg" />'alt="">

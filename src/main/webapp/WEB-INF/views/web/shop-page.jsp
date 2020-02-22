@@ -187,7 +187,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="single-cart-item">
                                 <div class="single-cart-image">
-                                     <a href="/Fashion/shoppage/detail/${sanpham.getMasanpham()}"><img class="image-item-01 item-active" src='<c:url value="/resources/web/img/shop-page/${sanpham.getHinhsanpham()}"/>' alt="">
+                                     <a href="/Fashion/shoppage/${sanpham.getMasanpham()}/detail"><img class="image-item-01 item-active" src='<c:url value="/resources/web/img/shop-page/${sanpham.getHinhsanpham()}"/>' alt="">
                                     </a>
                                 </div>
                                 <span class="love-icon"><i class="fa fa-heart"></i></span>

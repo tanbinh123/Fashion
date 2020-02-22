@@ -78,7 +78,7 @@ public class ShoppageController {
 
 		return "web/shop-page";
 	}
-	@GetMapping("detail/{idproduct}")
+	@GetMapping("{idproduct}/detail")
 	public String getProductDetail(ModelMap map,@PathVariable int idproduct) {
 		
 		SanPham product=productService.getDetail(idproduct);
