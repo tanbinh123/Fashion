@@ -47,7 +47,7 @@
                 <div class="cart-banner-left">
                     <div class="left-title mb-5">
                         <h3>Summer Collection</h3>
-                        <h4 id="nameproduct">${product.getTensanpham()}</h4>
+                        <h4 id="nameproduct" data-idproduct="${product.getMasanpham()}">${product.getTensanpham()}</h4>
                     </div>
                     <div class="price mb-5">
                         <h2 id="priceproduct">$ ${product.getGiatien()}</h2>
@@ -57,23 +57,20 @@
                         <ul class="mt-3">
                          <c:forEach var="list" items="${product.getChiTietSanPhams()}">
 							 <label class="radio-inline ">
-							  <li><input type="radio" name="rd" value="${list.getMauSanPham().getMamau()}" class="color${fn:toLowerCase(list.getMauSanPham().getMamau())}"  >${list.getMauSanPham().getTenmau()}</li>				
+							  <li>
+							  <input type="radio" name="rd" value="${list.getMauSanPham().getMamau()}" 
+							  class="color${fn:toLowerCase(list.getMauSanPham().getMamau())}" 
+							  data-name="${list.getMauSanPham().getTenmau()}" 
+							  data-size="${list.getSizeSanPham().getSize()}" 
+							  data-idsize="${list.getSizeSanPham().getMasize()}"
+							  data-iddetail="${list.getMachitietsanpham()}">
+							  ${list.getMauSanPham().getTenmau()}  -Size-  ${list.getSizeSanPham().getSize()} 
+							  </li >				
 							</label>
                         </c:forEach>
                         </ul>
                     </div> 
               
-                   <div class="size mb-5">
-                        <h4>Select your size</h4>
-                        <ul>
-                       
-                         <c:forEach var="chitietsanpham" items="${product.getChiTietSanPhams()}"> 
-                         	<label class="radio-inline">
-                        	<li><input type="radio" name="rdsize" class="size" value="${chitietsanpham.getSizeSanPham().getMasize()}"><span> ${chitietsanpham.getSizeSanPham().getSize()} </span></li>								
-                      		</label>
-                      	</c:forEach>
-                        </ul>
-                    </div> 
                     <div class="quantity mb-5">
                         <h4>Quantity</h4>
                         <ul>
@@ -86,8 +83,8 @@
                 </div>
             </div>
             <div class="col-lg-4 order-1 order-lg-2">
-                <div class="banner-image big-slider">
-                    <div class="cart-page-banner-bg" style="background-image:url('<c:url value="/resources/web/img/shop-page/${product.getHinhsanpham()}"/>'); "></div>
+                <div class="banner-image big-slider" >
+                    <div class="cart-page-banner-bg" data-img="${product.getHinhsanpham()}" style="background-image:url('<c:url value="/resources/web/img/shop-page/${product.getHinhsanpham()}"/>'); "></div>
                 </div>
             </div>
             <div class="col-lg-5 align-self-center order-3">

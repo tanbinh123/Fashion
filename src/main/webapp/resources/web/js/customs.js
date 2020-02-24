@@ -35,14 +35,59 @@ $(document).ready(function(){
 		$(".val").text(numItem);
 	})
 	// add to cart
-	$("body").on("click",".template-btn2",function(){
+	$("body").on("click",".template-btn2",function(e){
+		e.preventDefault();
+		var formdata=$("#formSanPham").serializeArray();
+		json={};
+		
+		$.each(formdata,function(i,field){
+			json[field.name]=field.value;
+		})
+		
+		//name product
 		name=$("#nameproduct").text();
+		idname=$("#nameproduct").attr("data-idproduct");
+		//
 		price=$("#priceproduct").text();
-		color= $("input[name='rd']:checked").val();
-		size=$("input[name='rdsize']:checked").val();
+		// color
+		idcolor= $("input[name='rd']:checked").val();
+		color= $("input[name='rd']:checked").data('name');
+		// size
+		idsize=$("input[name='rd']:checked").data('idsize')
+		size=$("input[name='rd']:checked").data('size');
+		//số lượng
 		numItem=$(".val").text();
-		alert(numItem);
-		//color=$("radio").checked();
+		//detail
+		iddetail=$("input[name='rd']:checked").data('iddetail');
+		//img
+		img=$(".cart-page-banner-bg").data('img');
+		//insert JSON
+		json["idcolor"]=idcolor;
+		json["color"]=color;
+		json["idsize"]=idsize;
+		json["size"]=size;
+		json["numItem"]=numItem;
+		json["idname"]=idname;
+		json["name"]=name;
+		json["price"]=price;
+		json["iddetail"]=iddetail;
+		json["img"]=img;
+		
+		console.log(json);
+		$.ajax({
+			url:"/Fashion/api/addToCart",
+			type:"GET",
+			data:{
+				datajson:JSON.stringify(json)
+			},
+			success: function(value){
+				
+				console.log(value);
+			}	
+	})
+		
+		
+		
 	})
 
 	

@@ -11,6 +11,7 @@ public class GioHang {
 	String giatien;
 	String tenmau;
 	String tensize;
+	String img;
 	
 	public int getMasp() {
 		return masp;
@@ -70,6 +71,12 @@ public class GioHang {
 	public int sum() {
 		int tongtien=Integer.parseInt(getGiatien());
 		return tongtien*getSoluong();
+	}
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
 	}
 	
 
