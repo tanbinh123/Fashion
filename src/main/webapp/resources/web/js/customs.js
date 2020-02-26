@@ -82,12 +82,24 @@ $(document).ready(function(){
 			},
 			success: function(value){
 				
-				console.log(value);
+				location.reload();
 			}	
+	})/*.done(function() {
+		$.ajax({
+			url:"/Fashion/api/numItem",
+			type:"GET",
+			success: function(value){
+			
+				location.reload();
+				//$(".cart-count").html("<span>"+value+"</span>");
+				//$(".numItem").html("<span>"+value+"</span>");
+				
+				
+			}
 	})
-		
-		
-		
+	})*/
+	
+
 	})
 
 	

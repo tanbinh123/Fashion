@@ -24,7 +24,7 @@ import com.manhnguyen.service.ProductService;
 
 @Controller
 @RequestMapping(value = "api/")
-@SessionAttributes({"carts"})
+@SessionAttributes({"carts","dangnhap"})
 public class ApiController {
 	@Autowired
 	ProductService productService;
@@ -71,43 +71,86 @@ public class ApiController {
 		
 	}
 
-	/*
-	 * private int checkProductInCart(List<GioHang> listGioHangs ,HttpSession
-	 * httpSession, int idproduct, int idcolor, int idsize) { for(int i = 0; i <
-	 * listGioHangs.size(); i++) { if(listGioHangs.get(i).getMasp() == idproduct &&
-	 * listGioHangs.get(i).getMamau() == idcolor && listGioHangs.get(i).getMasize()
-	 * == idsize) { return i; } } return -1; }
-	 */
+	
 	@GetMapping("addToCart")
 	@ResponseBody
 	public void addToCart(@RequestParam String datajson,HttpSession httpSession) throws IOException {
 		ObjectMapper oMapper=new ObjectMapper();
 		JsonNode jsonNode=oMapper.readTree(datajson);
-		
-		
-		GioHang cart=new GioHang();
-
-		cart.setMamau(jsonNode.get("idcolor").asInt());
-		cart.setTenmau(jsonNode.get("color").asText());
-		cart.setSoluong(jsonNode.get("numItem").asInt());
-		cart.setMasize(jsonNode.get("idsize").asInt());
-		cart.setTensize(jsonNode.get("size").asText());
-		
-		cart.setMachitiet(jsonNode.get("iddetail").asInt());
-		cart.setMasp(jsonNode.get("idname").asInt());
-		cart.setTensp(jsonNode.get("name").asText());
-		cart.setGiatien(jsonNode.get("price").asText());
-		cart.setImg(jsonNode.get("img").asText());
-		
-		List<GioHang>list=new ArrayList<GioHang>();
-		list.add(cart);
-		for (GioHang gioHang : list) {
-			System.out.println(gioHang.getTensp()+gioHang.getTenmau()+gioHang.getTensize()+gioHang.getGiatien());
+		//session not exist add item in carts and create session carts
+		if(null==httpSession.getAttribute("carts")) {
+			GioHang cart=new GioHang();
+			cart.setMamau(jsonNode.get("idcolor").asInt());
+			cart.setTenmau(jsonNode.get("color").asText());
+			cart.setSoluong(jsonNode.get("numItem").asInt());
+			cart.setMasize(jsonNode.get("idsize").asInt());
+			cart.setTensize(jsonNode.get("size").asText());
+			
+			cart.setMachitiet(jsonNode.get("iddetail").asInt());
+			cart.setMasp(jsonNode.get("idname").asInt());
+			cart.setTensp(jsonNode.get("name").asText());
+			cart.setGiatien(jsonNode.get("price").asText());
+			cart.setImg(jsonNode.get("img").asText());
+			
+			List<GioHang>list=new ArrayList<GioHang>();
+			list.add(cart);
+			httpSession.setAttribute("carts",list);
+			System.out.println("khoi tao cart");
+	
+		}else {
+			List<GioHang>list=(List<GioHang>) httpSession.getAttribute("carts");
+			int idproduct=jsonNode.get("idname").asInt();
+			int idcolor=jsonNode.get("idcolor").asInt();
+			int idsize=jsonNode.get("idsize").asInt();
+			int index=checkItemExist(idproduct, idcolor, idsize, list);
+			if(index==-1) {
+				GioHang cart=new GioHang();
+				cart.setMamau(jsonNode.get("idcolor").asInt());
+				cart.setTenmau(jsonNode.get("color").asText());
+				cart.setSoluong(jsonNode.get("numItem").asInt());
+				cart.setMasize(jsonNode.get("idsize").asInt());
+				cart.setTensize(jsonNode.get("size").asText());
+				
+				cart.setMachitiet(jsonNode.get("iddetail").asInt());
+				cart.setMasp(jsonNode.get("idname").asInt());
+				cart.setTensp(jsonNode.get("name").asText());
+				cart.setGiatien(jsonNode.get("price").asText());
+				cart.setImg(jsonNode.get("img").asText());
+				list.add(cart);
+				System.out.println("Them san pham vao");
+			}else {
+				int newItem=list.get(index).getSoluong()+1;
+				list.get(index).setSoluong(newItem);
+				System.out.println("soluong la"+list.get(index).getSoluong());
+			}
+			
 		}
-		
+	
 		
 	}
+	
+	
+	//check item exist in carts
+	public int checkItemExist(int idproduct,int idcolor,int idsize,List<GioHang> lists) {
+		for (int i = 0; i < lists.size(); i++) {
+			if(lists.get(i).getMasp()==idproduct&&lists.get(i).getMamau()==idcolor&&lists.get(i).getMasize()==idsize) {
+				return i;
+			}
+			
+		}
+		return -1;
 		
+	}
+	/*
+	 * //get numItem
+	 * 
+	 * @GetMapping("numItem")
+	 * 
+	 * @ResponseBody public String getNumItemCarts(HttpSession httpSession) {
+	 * if(null!=httpSession.getAttribute("carts")) {
+	 * List<GioHang>list=(List<GioHang>) httpSession.getAttribute("carts"); return
+	 * ""+list.size(); } return ""; }
+	 */
 
 
 }

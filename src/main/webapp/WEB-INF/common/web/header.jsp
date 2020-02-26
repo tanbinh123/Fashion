@@ -27,22 +27,24 @@
         <span class="cross-icon"><i class="lnr lnr-cross"></i></span>
         <div class="cart-title text-center">
             <h2>Cart</h2>
-            <h6 class="text-right">3 Items</h6>
+            <h6 class="text-right numItem">${fn:length(carts)} Items</h6>
         </div>
-
+        
         <div class="cart-items">
-
-            <div class="single-item-function-1">
+        <c:forEach var="item" items="${carts}">
+        	  <div class="single-item-function-1">
                 <div class="single-item d-flex justify-content-between mb-4">
                     <div class="item-left d-flex">
-                        <div class="item-image image-1"></div>
+                        <div class="item-image" style="background-image:url('<c:url value="/resources/web/img/shop-page/${item.getImg()}"/>');"></div>
                         <div class="item-name align-self-center">
-                            <h6>Pink Dress</h6>
+                            <h6>${item.getTensp() }</h6>
+                            <h6>${item.getTenmau() }</h6>
+                            <h6>${item.getTensize()}</h6>
                         </div>
                     </div>
                     <div class="item-right d-flex align-items-center">
                         <div class="item-price">
-                            <h6>$ 13</h6>
+                            <h6>${item.getGiatien() }</h6>
                         </div>
                         <div class="item-icon trash-icon-1">
                             <i class="fa fa-trash-o"></i>
@@ -50,46 +52,10 @@
                     </div>
                 </div>
             </div>
-
-            <div class="single-item-function-2">
-                <div class="single-item d-flex justify-content-between mb-4">
-                    <div class="item-left d-flex">
-                        <div class="item-image image-2"></div>
-                        <div class="item-name align-self-center">
-                            <h6>Black Heel</h6>
-                        </div>
-                    </div>
-                    <div class="item-right d-flex align-items-center">
-                        <div class="item-price">
-                            <h6>$ 13</h6>
-                        </div>
-                        <div class="item-icon trash-icon-2">
-                            <i class="fa fa-trash-o"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="single-item-function-3">
-                <div class="single-item d-flex justify-content-between">
-                    <div class="item-left d-flex">
-                        <div class="item-image image-3"></div>
-                        <div class="item-name align-self-center">
-                            <h6>Brown Bag</h6>
-                        </div>
-                    </div>
-                    <div class="item-right d-flex align-items-center">
-                        <div class="item-price">
-                            <h6>$ 13</h6>
-                        </div>
-                        <div class="item-icon trash-icon-3">
-                            <i class="fa fa-trash-o"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+           
+        </c:forEach>
+         </div>
+         
         <div class="total-price text-right">
             <h4>Total</h4>
             <h3>$ 158,00</h3>
@@ -375,7 +341,7 @@
                 <li class="cart floating-icon-1 ml-4">
                     <div class="cart-sec">
                         <a href="#"><span class="lnr lnr-cart"></span></a>
-                        <span class="cart-count">2</span>
+                        <span class="cart-count">${fn:length(carts)}</span>
                     </div>
                 </li>
             </ul>
