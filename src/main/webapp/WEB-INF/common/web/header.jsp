@@ -32,7 +32,8 @@
         
         <div class="cart-items">
         <c:forEach var="item" items="${carts}">
-        	  <div class="single-item-function-1">
+        
+        	  <div class="single-item-function-1" >
                 <div class="single-item d-flex justify-content-between mb-4">
                     <div class="item-left d-flex">
                         <div class="item-image" style="background-image:url('<c:url value="/resources/web/img/shop-page/${item.getImg()}"/>');"></div>
@@ -40,25 +41,26 @@
                             <h6>${item.getTensp() }</h6>
                             <h6>${item.getTenmau() }</h6>
                             <h6>${item.getTensize()}</h6>
+                            <h6>${item.getSoluong()}</h6>
                         </div>
                     </div>
                     <div class="item-right d-flex align-items-center">
                         <div class="item-price">
-                            <h6>${item.getGiatien() }</h6>
+                            <h6 class="pricex">${item.getGiatien() }</h6>
                         </div>
                         <div class="item-icon trash-icon-1">
                             <i class="fa fa-trash-o"></i>
                         </div>
                     </div>
                 </div>
-            </div>
-           
+         
+           </div>
         </c:forEach>
          </div>
          
         <div class="total-price text-right">
             <h4>Total</h4>
-            <h3>$ 158,00</h3>
+            <h3 id="totalx">$ 0</h3>
         </div>
 
         <div class="cart-buttons mt-4 mt-xl-5">
@@ -340,7 +342,7 @@
 			       
                 <li class="cart floating-icon-1 ml-4">
                     <div class="cart-sec">
-                        <a href="#"><span class="lnr lnr-cart"></span></a>
+                        <a href="/Fashion/api/total"><span class="lnr lnr-cart"></span></a>
                         <span class="cart-count">${fn:length(carts)}</span>
                     </div>
                 </li>

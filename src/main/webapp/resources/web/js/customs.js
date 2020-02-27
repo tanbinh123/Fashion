@@ -35,7 +35,7 @@ $(document).ready(function(){
 		$(".val").text(numItem);
 	})
 	// add to cart
-	$("body").on("click",".template-btn2",function(e){
+	$("body").on("click",".on2",function(e){
 		e.preventDefault();
 		var formdata=$("#formSanPham").serializeArray();
 		json={};
@@ -48,7 +48,7 @@ $(document).ready(function(){
 		name=$("#nameproduct").text();
 		idname=$("#nameproduct").attr("data-idproduct");
 		//
-		price=$("#priceproduct").text();
+		price=$("#priceproduct").text().substring(2);
 		// color
 		idcolor= $("input[name='rd']:checked").val();
 		color= $("input[name='rd']:checked").data('name');
@@ -82,25 +82,33 @@ $(document).ready(function(){
 			},
 			success: function(value){
 				
-				location.reload();
+			
+				//location.reload();
 			}	
-	})/*.done(function() {
+	}).done(function() {
 		$.ajax({
 			url:"/Fashion/api/numItem",
 			type:"GET",
 			success: function(value){
 			
-				location.reload();
-				//$(".cart-count").html("<span>"+value+"</span>");
-				//$(".numItem").html("<span>"+value+"</span>");
-				
-				
+				$(".cart-count").html("<span>"+value.length+"</span>");
+				$(".numItem").html("<span>"+value.length+" Items"+"</span>");
+				//location.reload();
+				var total=0;
+				$.each( value, function( key, value1 ) {
+					
+					 total+=parseInt(value1.giatien)*value1.soluong;
+				});
+				 $("#totalx").html("<span>"+"$"+total+"</span>");
+			
 			}
 	})
-	})*/
+	})
 	
 
 	})
 
-	
+	/*$("body").on("click",".lnr-cart",function(){
+		location.reload();
+	})*/
 });

@@ -31,13 +31,21 @@ public class GioHang {
 	public void setTensp(String tensp) {
 		this.tensp = tensp;
 	}
+	
 
+	
+	
 	public String getGiatien() {
 		return giatien;
 	}
 	public void setGiatien(String giatien) {
 		this.giatien = giatien;
 	}
+
+
+
+
+	
 	public String getTenmau() {
 		return tenmau;
 	}
@@ -68,10 +76,7 @@ public class GioHang {
 	public void setSoluong(int soluong) {
 		this.soluong = soluong;
 	}
-	public int sum() {
-		int tongtien=Integer.parseInt(getGiatien());
-		return tongtien*getSoluong();
-	}
+	
 	public String getImg() {
 		return img;
 	}

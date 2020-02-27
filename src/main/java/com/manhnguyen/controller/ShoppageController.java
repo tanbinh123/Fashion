@@ -2,6 +2,8 @@ package com.manhnguyen.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.manhnguyen.entity.DanhMucSanPham;
+import com.manhnguyen.entity.GioHang;
 import com.manhnguyen.entity.MauSanPham;
 import com.manhnguyen.entity.SanPham;
 import com.manhnguyen.entity.SizeSanPham;
@@ -103,6 +106,7 @@ public class ShoppageController {
 		map.addAttribute("num",num);
 		return "web/shop-page";
 	}
+	
 	
 
 }
