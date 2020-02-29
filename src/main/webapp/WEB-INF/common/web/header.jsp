@@ -38,10 +38,11 @@
                     <div class="item-left d-flex">
                         <div class="item-image" style="background-image:url('<c:url value="/resources/web/img/shop-page/${item.getImg()}"/>');"></div>
                         <div class="item-name align-self-center">
+						 	
                             <h6>${item.getTensp() }</h6>
                             <h6>${item.getTenmau() }</h6>
                             <h6>${item.getTensize()}</h6>
-                            <h6>${item.getSoluong()}</h6>
+                            <h6 class="numItemx">${item.getSoluong()}</h6>           
                         </div>
                     </div>
                     <div class="item-right d-flex align-items-center">
@@ -58,14 +59,13 @@
         </c:forEach>
          </div>
          
-        <div class="total-price text-right">
+     <div class="total-price text-right">
             <h4>Total</h4>
-            <h3 id="totalx">$ 0</h3>
+            <h3 id="totalx"> $ 0  </h3>
         </div>
 
         <div class="cart-buttons mt-4 mt-xl-5">
-            <a href="#" class="template-btn2 off2 mb-4">View Cart <span>&rharu;</span></a>
-            <a href="#" class="template-btn2 off1">Checkout <span>&rharu;</span></a>
+            <a  href="/Fashion/shoppage/carts" class="template-btn2 off2 mb-4">View Cart <span>&rharu;</span></a>
         </div>
     </div>
 </div>
@@ -148,7 +148,7 @@
     
             <div class="message-2 text-right mt-3">
                 <p class="message-name mr-4">You</p>
-                <input type="text" placeholder="Yes Sure, Let’s start">
+                <input type="text" placeholder="Yes Sure, Letâs start">
                 <p class="message-date mr-4">Sunday 23, 11:20am</p>
             </div>
     
@@ -339,13 +339,16 @@
 			       	</c:otherwise>
 			      </c:choose>
 			       
-			       
+			      
                 <li class="cart floating-icon-1 ml-4">
                     <div class="cart-sec">
-                        <a href="/Fashion/api/total"><span class="lnr lnr-cart"></span></a>
-                        <span class="cart-count">${fn:length(carts)}</span>
+                    	
+                        <a><span class="lnr lnr-cart"></span></a>
+                       <span class="cart-count">${fn:length(carts)}</span>
+                        
                     </div>
                 </li>
+              
             </ul>
         </div>
     </div>

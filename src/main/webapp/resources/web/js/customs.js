@@ -34,6 +34,7 @@ $(document).ready(function(){
 		}
 		$(".val").text(numItem);
 	})
+	GanTongTienGioHang();
 	// add to cart
 	$("body").on("click",".on2",function(e){
 		e.preventDefault();
@@ -73,7 +74,9 @@ $(document).ready(function(){
 		json["iddetail"]=iddetail;
 		json["img"]=img;
 		
-		console.log(json);
+		
+		
+		
 		$.ajax({
 			url:"/Fashion/api/addToCart",
 			type:"GET",
@@ -93,22 +96,82 @@ $(document).ready(function(){
 			
 				$(".cart-count").html("<span>"+value.length+"</span>");
 				$(".numItem").html("<span>"+value.length+" Items"+"</span>");
-				//location.reload();
-				var total=0;
+				location.reload();
+				GanTongTienGioHang();
+				
+				/*var total=0;
 				$.each( value, function( key, value1 ) {
 					
 					 total+=parseInt(value1.giatien)*value1.soluong;
 				});
-				 $("#totalx").html("<span>"+"$"+total+"</span>");
+				 $("#totalx").html("<span>"+"$"+total+"</span>");*/
 			
 			}
+				
 	})
 	})
 	
 
 	})
+	
+	function GanTongTienGioHang(){
+		var tongtiensp=0;
+		$(".giatien").each(function() {
+			var soluong = $(this).closest("tr").find(".soluong-giohang").val();
+			
+			var giatien=$(this).text();
+			var tongtien=parseFloat(giatien)*soluong;
+			tongtiensp+=tongtien;
+			$("#tongtien").html(tongtiensp+" VND");
+			$("#totalx").html(tongtiensp);
+			
+		})
+	}
+	$(".soluong-giohang").change(function () {
+		
+		var soluong=$(this).val();
+		var giatien=$(this).closest("tr").find(".giatien").attr("data-value");
+		GanTongTienGioHang();
+	
+		
+		
+//		var tongtien=soluong*parseInt(giatien);
+//		
+//		$(this).closest("tr").find(".giatien").html(tongtien+"");
+		
+		
+		
+		var mamau=$(this).closest("tr").find(".mau").attr("data-mamau");
+		var masize=$(this).closest("tr").find(".size").attr("data-size");
+		var masp=$(this).closest("tr").find(".tensp").attr("data-masp");
+		$.ajax({
+			url:"/mini-shop/api/CapNhatGioHang",
+			type:"GET",
+			data:{
+				masp:masp,
+				masize:masize,
+				mamau:mamau,
+				soluong:soluong,
+				
+			},
+			success: function(value){
+				
+			}	
+	})
+	})
 
-	/*$("body").on("click",".lnr-cart",function(){
-		location.reload();
-	})*/
+	/*finalTotal();
+
+	function finalTotal(){
+		
+		var tongtiensp=0;
+		$(".pricex").each(function() {
+			var soluong=parseFloat($(this).text());
+			var giatien=parseFloat($(".pricex").text());
+			tongtiensp+=soluong*giatien;
+			//alert(tongtien);
+			$("#totalx").html(tongtiensp+" VND");
+		})
+	
+	}*/
 });

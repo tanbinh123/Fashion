@@ -24,7 +24,6 @@
     <link rel="stylesheet" href='<c:url value="/resources/web/css/font-awesome.min.css"/>'>
     <!-- flaticon -->
     <link rel="stylesheet" href='<c:url value="/resources/web/css/linearicons.css"/>'>
-
     <link rel="stylesheet" href='<c:url value="/resources/web/css/slick.css"/>'>
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href='<c:url value="/resources/web/css/style.css"/>'>
@@ -34,8 +33,7 @@
 </head>
 
 <body class="shop-page common-typography">
-   <%@ include file="/WEB-INF/common/web/header.jsp" %>
-
+<%@ include file="/WEB-INF/common/web/header.jsp" %>
 <!-- Banner Starts -->
 <section class="shop-banner section-padding-bottom2">
     <div class="container-fluid pr-0">

@@ -1,5 +1,7 @@
 package com.manhnguyen.entity;
 
+import java.util.List;
+
 public class GioHang {
 	int masp;
 	int masize;
@@ -83,6 +85,7 @@ public class GioHang {
 	public void setImg(String img) {
 		this.img = img;
 	}
+	
 	
 
 }

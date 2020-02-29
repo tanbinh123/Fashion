@@ -83,7 +83,7 @@ public class ApiController {
 			List<GioHang> list = new ArrayList<GioHang>();
 			list.add(cart);
 			httpSession.setAttribute("carts", list);
-			System.out.println("khoi tao cart");
+		
 
 		} else {
 			List<GioHang> list = (List<GioHang>) httpSession.getAttribute("carts");
@@ -105,11 +105,11 @@ public class ApiController {
 				cart.setGiatien(jsonNode.get("price").asText());
 				cart.setImg(jsonNode.get("img").asText());
 				list.add(cart);
-				System.out.println("Them san pham vao");
+				
 			} else {
 				int newItem = list.get(index).getSoluong() + 1;
 				list.get(index).setSoluong(newItem);
-				System.out.println("soluong la" + list.get(index).getSoluong());
+			
 			}
 
 		}
@@ -134,15 +134,10 @@ public class ApiController {
 	  @GetMapping("numItem")
 	  @ResponseBody 
 	  public List<GioHang> getNumItemCarts(HttpSession httpSession,ModelMap map) {
-		  //float sum=0;
 		  if(null!=httpSession.getAttribute("carts")) {
 		  List<GioHang>list=(List<GioHang>) httpSession.getAttribute("carts"); 
-			/*
-			 * for (GioHang gioHang : list) {
-			 * //System.out.println(Float.parseFloat(gioHang.getGiatien())*100);
-			 * sum+=gioHang.getSoluong()*Float.parseFloat(gioHang.getGiatien()); }
-			 * System.out.println("totla"+ sum); map.addAttribute("sumx", sum);
-			 */
+		 
+			
 		  return list;
 		  }
 		 return null;
