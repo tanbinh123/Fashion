@@ -34,7 +34,6 @@ $(document).ready(function(){
 		}
 		$(".val").text(numItem);
 	})
-	GanTongTienGioHang();
 	// add to cart
 	$("body").on("click",".on2",function(e){
 		e.preventDefault();
@@ -97,15 +96,6 @@ $(document).ready(function(){
 				$(".cart-count").html("<span>"+value.length+"</span>");
 				$(".numItem").html("<span>"+value.length+" Items"+"</span>");
 				location.reload();
-				GanTongTienGioHang();
-				
-				/*var total=0;
-				$.each( value, function( key, value1 ) {
-					
-					 total+=parseInt(value1.giatien)*value1.soluong;
-				});
-				 $("#totalx").html("<span>"+"$"+total+"</span>");*/
-			
 			}
 				
 	})
@@ -114,64 +104,81 @@ $(document).ready(function(){
 
 	})
 	
-	function GanTongTienGioHang(){
-		var tongtiensp=0;
-		$(".giatien").each(function() {
-			var soluong = $(this).closest("tr").find(".soluong-giohang").val();
-			
-			var giatien=$(this).text();
-			var tongtien=parseFloat(giatien)*soluong;
-			tongtiensp+=tongtien;
-			$("#tongtien").html(tongtiensp+" VND");
-			$("#totalx").html(tongtiensp);
-			
-		})
-	}
-	$(".soluong-giohang").change(function () {
-		
-		var soluong=$(this).val();
-		var giatien=$(this).closest("tr").find(".giatien").attr("data-value");
-		GanTongTienGioHang();
+
+	//Tính tổng tiền cho cart
+	Total();
+	function Total(){
+		var total=0;
+			//price =$(".price").attr("data-value");
+			$(".pricew1").each(function(){
+				var price=$(this).attr("data-value");
+				var num=$(this).text();
+				var sumTotal=parseFloat(price)*num;
+				total+=sumTotal;
+				$(".final").html("$"+total);
+				$("#totalx").html("$"+total);
+			})
 	
 		
+	}
+	//Tính tổng tiền cho cart file header
+	TotalCart()
+	function TotalCart(){
+		var total=0;
+			
+			$(".pricew").each(function(){
+				var price=$(this).attr("data-value");
+				var num=$(this).text();
+				var sumTotal=parseFloat(price)*num;
+				total+=sumTotal;
+				$("#totalx").html("$"+total);
+			})
+	
 		
-//		var tongtien=soluong*parseInt(giatien);
-//		
-//		$(this).closest("tr").find(".giatien").html(tongtien+"");
-		
-		
-		
-		var mamau=$(this).closest("tr").find(".mau").attr("data-mamau");
-		var masize=$(this).closest("tr").find(".size").attr("data-size");
-		var masp=$(this).closest("tr").find(".tensp").attr("data-masp");
+	}
+	
+	//Delete Item Cart
+	$(".trash-icon").on("click",function(){	
+		var sefl=$(this);
+		var idproduct=$(this).parent().parent().find(".idpro").attr("data-masp");
+		var idcolor=$(this).parent().parent().find(".idcolor").attr("data-mamau");
+		var idsize=$(this).parent().parent().find(".idsize").attr("data-size");
+		json={};
+		json["idproduct"]=idproduct;
+		json["idcolor"]=idcolor;
+		json["idsize"]=idsize;
+		console.log(json);
+
 		$.ajax({
-			url:"/mini-shop/api/CapNhatGioHang",
+			url:"/Fashion/api/deleteItem",
 			type:"GET",
 			data:{
-				masp:masp,
-				masize:masize,
-				mamau:mamau,
-				soluong:soluong,
-				
+				datajson:JSON.stringify(json)
 			},
 			success: function(value){
-				
+				sefl.parent().parent().parent().remove();
+				TotalCart();
+				Total();
+			
+				//location.reload();
 			}	
+	}).done(function() {
+		$.ajax({
+			url:"/Fashion/api/numItem",
+			type:"GET",
+			success: function(value){
+			
+				$(".cart-count").html("<span>"+value.length+"</span>");
+				$(".numItem").html("<span>"+value.length+" Items"+"</span>");
+				//location.reload();
+			}
+				
 	})
 	})
-
-	/*finalTotal();
-
-	function finalTotal(){
 		
-		var tongtiensp=0;
-		$(".pricex").each(function() {
-			var soluong=parseFloat($(this).text());
-			var giatien=parseFloat($(".pricex").text());
-			tongtiensp+=soluong*giatien;
-			//alert(tongtien);
-			$("#totalx").html(tongtiensp+" VND");
-		})
+	})
 	
-	}*/
+	
+
+
 });

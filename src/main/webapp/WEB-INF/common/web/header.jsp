@@ -39,17 +39,18 @@
                         <div class="item-image" style="background-image:url('<c:url value="/resources/web/img/shop-page/${item.getImg()}"/>');"></div>
                         <div class="item-name align-self-center">
 						 	
-                            <h6>${item.getTensp() }</h6>
-                            <h6>${item.getTenmau() }</h6>
-                            <h6>${item.getTensize()}</h6>
-                            <h6 class="numItemx">${item.getSoluong()}</h6>           
+                            <h6 class="idpro" data-masp="${item.getMasp()}" >${item.getTensp() }</h6>
+                            <h6 class="idcolor"data-mamau="${item.getMamau()}">${item.getTenmau() }</h6>
+                            <h6 class="idsize"data-size="${item.getMasize()}">${item.getTensize()}</h6>
+                            <h6 class="pricew"  data-value="${item.getGiatien() }">${item.getSoluong()}</h6>           
                         </div>
                     </div>
                     <div class="item-right d-flex align-items-center">
                         <div class="item-price">
                             <h6 class="pricex">${item.getGiatien() }</h6>
                         </div>
-                        <div class="item-icon trash-icon-1">
+                     
+                        <div class="item-icon trash-icon">
                             <i class="fa fa-trash-o"></i>
                         </div>
                     </div>

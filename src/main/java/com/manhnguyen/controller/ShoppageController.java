@@ -109,7 +109,7 @@ public class ShoppageController {
 	
 	@GetMapping("carts")
 	public String cartItem(ModelMap map) {
-		return "web/giohang";
+		return "web/cart-tab-page";
 	}
 
 }

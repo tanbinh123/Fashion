@@ -133,7 +133,7 @@
         });
 
 
-        $('.trash-icon-1').on('click', function(){
+/*        $('.trash-icon-1').on('click', function(){
             $('.single-item-function-1').hide();
         });
         $('.trash-icon-2').on('click', function(){
@@ -141,7 +141,7 @@
         });
         $('.trash-icon-3').on('click', function(){
             $('.single-item-function-3').hide();
-        });
+        });*/
 
         // Cart Item Slide 
 

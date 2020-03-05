@@ -142,6 +142,23 @@ public class ApiController {
 		  }
 		 return null;
 	}
+	  @GetMapping("deleteItem")
+	  @ResponseBody
+	  public void deleteItem(@RequestParam String datajson,HttpSession httpSession) throws IOException {
+		  if(httpSession!=null) {
+			  ObjectMapper objectMapper=new ObjectMapper();
+			  JsonNode jsonNode=objectMapper.readTree(datajson);
+			  int idproduct=jsonNode.get("idproduct").asInt();
+			  int idcolor=jsonNode.get("idcolor").asInt();
+			  int idsize=jsonNode.get("idsize").asInt();
+			  List<GioHang>list=(List<GioHang>) httpSession.getAttribute("carts");
+			  int index=checkItemExist(idproduct, idcolor, idsize, list);
+			  list.remove(index);
+			  
+		  }
+		
+		  
+	  }
 	 
 	 
 

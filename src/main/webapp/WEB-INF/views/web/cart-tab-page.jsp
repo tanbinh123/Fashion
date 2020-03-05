@@ -79,113 +79,42 @@
                                    <li><h4>Price</h4></li>
                                </ul>
                            </div>
-
-                           <div class="cart-box">
+                           <c:forEach var="value" items="${carts }">
+                            <div class="cart-box" data-machitiet="${value.getMachitiet()}">
                                <div class="single-cart d-flex justify-content-between mb-5">
                                     <div class="cart-left d-flex">
                                         <div class="cart-image image1">
                                         </div>
                                         <div class="cart-text">
-                                            <h4>Pink Dress</h4>
-                                            <p>Size: M</p>
-                                            <p>Color: Pink</p>
+                                            <h4 class="idpro"data-masp="${value.getMasp()}">${value.getTensp() }</h4>
+                                            <p class="idcolor"data-mamau="${value.getMamau()}">${value.getTenmau()}</p>
+                                            <p class="idsize"data-size="${value.getMasize()}">${value.getTensize()}</p>
                                         </div>
                                     </div>
                                     <div class="cart-center align-self-center">
                                         <div class="cart-quantity">
                                             <ul>
                                                 <li><span><i class="ti-minus"></i></span></li>
-                                                <li><span>1</span></li>
+                                                <li class="pricew1"  data-value="${value.getGiatien() }">${value.getSoluong()}</li>
                                                 <li><span><i class="ti-plus"></i></span></li>
+                                              
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="cart-right d-flex align-self-center">
+                                    <div class="item-right d-flex align-items-center">
                                         <div class="cart-price">
-                                            <h4>$26</h4>
+                                              <h4 >${value.getGiatien() }</h4>
                                         </div>
-                                        <div class="cart-icon mr-120">
-                                            <img src='<c:url value="/resources/web/img/cart-tab-page/icon-1.png" />'>
-                                        </div>
+                                       <div class="item-icon trash-icon">
+				                            <i class="fa fa-trash-o"></i>
+				                        </div>
                                     </div>
                                </div>
+                               </div>
+                               </c:forEach>
                                
-                               <div class="single-cart single-cart2 d-flex justify-content-between mb-5">
-                                    <div class="cart-left d-flex">
-                                        <div class="cart-image image2">
-                                        </div>
-                                        <div class="cart-text">
-                                            <h4>Black Heel</h4>
-                                            <p>Size: M</p>
-                                            <p>Color: Pink</p>
-                                        </div>
-                                    </div>
-                                    <div class="cart-center align-self-center">
-                                        <div class="cart-quantity">
-                                            <ul>
-                                                <li><span><i class="ti-minus"></i></span></li>
-                                                <li><span>2</span></li>
-                                                <li><span><i class="ti-plus"></i></span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-right d-flex align-self-center">
-                                        <div class="cart-price">
-                                            <h4>$32</h4>
-                                        </div>
-                                        <div class="cart-icon mr-120">
-                                            <img src='<c:url value="/resources/web/img/cart-tab-page/icon-1.png" />'>
-                                        </div>
-                                    </div>
-                               </div>
-                               
-                               <div class="single-cart d-flex justify-content-between mb-5">
-                                    <div class="cart-left d-flex">
-                                        <div class="cart-image image3">
-                                        </div>
-                                        <div class="cart-text">
-                                            <h4>Brown Bag</h4>
-                                            <p>Size: M</p>
-                                            <p>Color: Pink</p>
-                                        </div>
-                                    </div>
-                                    <div class="cart-center  align-self-center">
-                                        <div class="cart-quantity">
-                                            <ul>
-                                                <li><span><i class="ti-minus"></i></span></li>
-                                                <li><span>4</span></li>
-                                                <li><span><i class="ti-plus"></i></span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="cart-right d-flex align-self-center">
-                                        <div class="cart-price">
-                                            <h4>$100</h4>
-                                        </div>
-                                        <div class="cart-icon mr-120">
-                                            <img src='<c:url value="/resources/web/img/cart-tab-page/icon-1.png" />'>
-                                        </div>
-                                    </div>
-                               </div>
+                     
 
-                               <div class="cart-footer d-md-flex justify-content-between mt-100">
-                                    <div class="footer-left d-flex">
-                                        <div class="left-image mr-3 align-self-center">
-                                            <img src='<c:url value="/resources/web/img/cart-tab-page/icon-2.png" />'>
-                                        </div>
-                                        <div class="left-text">
-                                            <h6>Discount / Promo Code</h6>
-                                            <p><span>Don’t have any yet?</span> Check our discount programs to try some luck</p>
-                                        </div>
-                                    </div>
-                                    <div class="footer-right">
-                                        <div class="cart-button">
-                                            <a href="#" class="template-btn2 on2">Apply Promo Code Here <span>&rharu;</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                           </div>  
-                        </div>
                         <!-- Cart Section End -->
 
                         <!-- Also Like Starts -->
@@ -654,7 +583,7 @@
                                                             <li>$ 158</li>
                                                             <li>$ -10</li>
                                                             <li>$ 0</li>
-                                                            <li class="mt-4">$ 158,00</li>
+                                                            <li class="mt-4 final">$ 158,00</li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -759,7 +688,7 @@
                     <div class="estimation-right text-right">
                         <div class="right-title">
                             <h4>Total</h4>
-                            <h3>$ 158,00</h3>
+                            <h3 class="final">$ 158,00</h3>
                             <a href="#" class="template-btn2 off1">Checkout <span>&rharu;</span></a>
                         </div>
                     </div>
@@ -841,6 +770,7 @@
     <script src='<c:url value="/resources/web/js/datepicker.min.js"/>'></script>
     <script src='<c:url value="/resources/web/js/datepicker-en.js"/>'></script>
     <script src='<c:url value="/resources/web/js/main.js"/>'></script>
+    <script src='<c:url value="/resources/web/js/customs.js"/>'></script>
 
 </body>
 
