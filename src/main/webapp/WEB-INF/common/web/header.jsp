@@ -294,21 +294,7 @@
                 </li>
                 <li class="menu-item-has-children mega-menu-list">
                         <a href="#">Pages</a>
-                        <div class="mega-menu ">
-                            <ul class="mega-menu-inner">
-                                <li><a href="about-page.html">About us</a></li>
-                                <li><a href="cart-page.html">Cart page</a></li>
-                                <li><a href="cart-tab-page.html">Cart Tab</a></li>
-                            </ul>
-                            <ul class="mega-menu-inner">
-                                <li><a href="profile-page.html">Profile page</a></li>
-                                <li><a href="returns-page.html">Return page</a></li>            
-                            </ul>
-                            <ul class="mega-menu-inner">
-                                <img src='<c:url value="/resources/web/img/header-page/mega-menu.jpg"/>' alt="">
-                                <h5>Extra 10% off</h5>
-                            </ul>
-                        </div>
+
                     </li>
                 <li>
                     <a href="/Fashion/Contact/">Contact Us</a>

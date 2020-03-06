@@ -34,6 +34,9 @@ $(document).ready(function(){
 		}
 		$(".val").text(numItem);
 	})
+	//
+	TotalCart();
+	Total();
 	// add to cart
 	$("body").on("click",".on2",function(e){
 		e.preventDefault();
@@ -106,7 +109,7 @@ $(document).ready(function(){
 	
 
 	//Tính tổng tiền cho cart
-	Total();
+	
 	function Total(){
 		var total=0;
 			//price =$(".price").attr("data-value");
@@ -122,7 +125,7 @@ $(document).ready(function(){
 		
 	}
 	//Tính tổng tiền cho cart file header
-	TotalCart()
+	
 	function TotalCart(){
 		var total=0;
 			
@@ -160,6 +163,7 @@ $(document).ready(function(){
 				TotalCart();
 				Total();
 			
+				// reload data
 				//location.reload();
 			}	
 	}).done(function() {
@@ -178,7 +182,71 @@ $(document).ready(function(){
 		
 	})
 	
-	
+	//update numItem --
+	$(".ti-minus").on("click",function(){
+		var num=$(".pricew1").text();
+		num--;
+		if(num<1){
+			num=1;
+		}
+		$(".pricew1").text(num);
+		//alert(num);
+	})
+	//update numItem++
+		$(".ti-plus").on("click",function(){
+		var num=$(".pricew1").text();
+		num++;
+		$(".pricew1").text(num);
+		
+	})
+	//delivery
+	$('ul').on('click','li.searchterm',function(){
+			$("li").removeClass("active");
+			$(this).addClass("active");
+			$(this).parents().find(".cost").text($(this).text());
+			//$(this).parents().find(".cost1").text("$ "+$(this).attr("data-deli"));
+			
 
+		})
+	//Customer Information
+		//load infor customer to bill
+	$("#infor").on("change",function(){
+		var name = $(this).find('input[name="name"]').val();
+		var code=$(this).find('input[name="code"]').val();
+		var house=$(this).find('input[name="house"]').val();
+		var street=$(this).find('input[name="street"]').val();
+		var apartment=$(this).find('input[name="apart"]').val();
+		var city=$(this).find('input[name="city"]').val();
+		var country=$(this).find('input[name="country"]').val();
+		var phone=$(this).find('input[name="phone"]').val();
+		var address=house+","+street+","+apartment+","+city+","+country;
+		$(this).parents().find(".cname").text(name);
+		$(this).parents().find(".ccode").text(code);
+		$(this).parents().find(".caddress").text(address);
+		$(this).parents().find(".cphone").text(phone);
+		console.log(name+address+phone);
+	})
+	//load data insert bill
+	$(".off1").on("change",function(){
+		var pa=$(this).parents().find("#infor");
+		var name = pa.find('input[name="name"]').val();
+		var code=pa.find('input[name="code"]').val();
+		var house=pa.find('input[name="house"]').val();
+		var street=pa.find('input[name="street"]').val();
+		var apartment=pa.find('input[name="apart"]').val();
+		var city=pa.find('input[name="city"]').val();
+		var country=pa.find('input[name="country"]').val();
+		var phone=pa.find('input[name="phone"]').val();
+		var address=house+","+street+","+apartment+","+city+","+country;
+		json={};
+		json["name"]=name;
+		json["address"]=address;
+		json["phone"]=phone;
+		json["delivery"]="money";
+		json["cost"]=$(this).parents().find(".searchterm.active").attr("data-deli");
+		
+		
+	})
+	
 
 });

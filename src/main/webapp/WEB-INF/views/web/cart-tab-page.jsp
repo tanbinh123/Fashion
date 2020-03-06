@@ -113,208 +113,6 @@
                                </div>
                                </c:forEach>
                                
-                     
-
-                        <!-- Cart Section End -->
-
-                        <!-- Also Like Starts -->
-                        <div class="also-like section-padding-top3">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="also-like-title text-center">
-                                            <h3>You May Also Like</h3>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="also-like-slider owl-carousel mt-40">
-                                            <div class="single-slide">
-                                                <div class="single-cart-item active">
-                                                        <div class="single-cart-image">
-                                                                <img class="image-item-01 item-active" src='<c:url value="/resources/web/img/home-1/pick/pick-1.png" />'>
-                                                                <img class="image-item-02" src='<c:url value="/resources/web/img/shop-page/item7.png" />'>
-                                                                <div class="image-dots">
-                                        <div class="dot-01"></div>
-                                        <div class="dot-02 active"></div>
-                                    </div>
-                                                            </div>
-                                                            <span class="love-icon"><i class="fa fa-heart"></i></span>
-                        
-                                                    <div class="single-cart-content">
-                                                        <div class="cart-content-left">
-                                                            <ul class="cart-rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li class="diff-color"><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                            <h5>Belted Chino Trousers</h5>
-                                                            <ul class="cart-size">
-                                                                <li><span>xs</span></li>
-                                                                <li class="active"><span>s</span></li>
-                                                                <li><span>m</span></li>
-                                                                <li><span>l</span></li>
-                                                                <li><span>xl</span></li>
-                                                            </ul>
-                                                        </div>
-                        
-                                                        <div class="cart-content-right">
-                                                            <span class="current-price">$45.99</span>
-                                                            <span class="old-price">$99.10</span>
-                                                        </div>
-                                                    </div>
-                        
-                                                    <div class="single-cart-button">
-                                                        <a href="#" class="cart-button floating-icon-1">add to cart</a>
-                                                        <a href="#" class="compare-button">compare</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                        
-                                            <div class="single-slide">
-                                                <div class="single-cart-item">
-                                                    <div class="single-cart-image">
-                                                            <img class="image-item-01 item-active" src='<c:url value="/resources/web/img/home-1/pick/pick-2.jpg" />'>
-                                                            <img class="image-item-02" src='<c:url value="/resources/web/img/shop-page/item7.png" />'>
-                                                            <div class="image-dots">
-                                                                    <div class="dot-01"></div>
-                                                                    <div class="dot-02 active"></div>
-                                                                </div>
-                                                        </div>
-                                                        <span class="love-icon"><i class="fa fa-heart"></i></span>
-                        
-                                                    <div class="single-cart-content">
-                                                        <div class="cart-content-left">
-                                                            <ul class="cart-rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li class="diff-color"><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                            <h5>Belted Chino Trousers</h5>
-                                                            <ul class="cart-size">
-                                                                <li><span>xs</span></li>
-                                                                <li class="active"><span>s</span></li>
-                                                                <li><span>m</span></li>
-                                                                <li><span>l</span></li>
-                                                                <li><span>xl</span></li>
-                                                            </ul>
-                                                        </div>
-                        
-                                                        <div class="cart-content-right">
-                                                            <span class="current-price">$45.99</span>
-                                                            <span class="old-price">$99.10</span>
-                                                        </div>
-                                                    </div>
-                        
-                                                    <div class="single-cart-button">
-                                                        <a href="#" class="cart-button floating-icon-1">add to cart</a>
-                                                        <a href="#" class="compare-button">compare</a>
-                                                    </div>
-                                                </div>                                  
-                                            </div>
-                        
-                                            <div class="single-slide">
-                                                <div class="single-cart-item">
-                                                    <div class="single-cart-image">
-                                                            <img class="image-item-01 item-active" src='<c:url value="/resources/web/img/home-1/pick/pick-3.jpg" />'>
-                                                            <img class="image-item-02" src='<c:url value="/resources/web/img/shop-page/item7.png" />'>
-                                                            <div class="image-dots">
-                                                                    <div class="dot-01"></div>
-                                                                    <div class="dot-02 active"></div>
-                                                                </div>
-                                                        </div>
-                                                        <span class="love-icon"><i class="fa fa-heart"></i></span>
-                        
-                                                    <div class="single-cart-content">
-                                                        <div class="cart-content-left">
-                                                            <ul class="cart-rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li class="diff-color"><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                            <h5>Belted Chino Trousers</h5>
-                                                            <ul class="cart-size">
-                                                                <li><span>xs</span></li>
-                                                                <li class="active"><span>s</span></li>
-                                                                <li><span>m</span></li>
-                                                                <li><span>l</span></li>
-                                                                <li><span>xl</span></li>
-                                                            </ul>
-                                                        </div>
-                        
-                                                        <div class="cart-content-right">
-                                                            <span class="current-price">$45.99</span>
-                                                            <span class="old-price">$99.10</span>
-                                                        </div>
-                                                    </div>
-                        
-                                                    <div class="single-cart-button">
-                                                        <a href="#" class="cart-button floating-icon-1">add to cart</a>
-                                                        <a href="#" class="compare-button">compare</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                        
-                                            <div class="single-slide">
-                                                <div class="single-cart-item">
-                                                    <div class="single-cart-image">
-                                                            <img class="image-item-01 item-active" src='<c:url value="/resources/web/img/home-1/pick/pick-4.png"/>'>
-                                                            <img class="image-item-02" src='<c:url value="/resources/web/img/shop-page/item7.png" />'>
-                                                            <div class="image-dots">
-                                                                    <div class="dot-01"></div>
-                                                                    <div class="dot-02 active"></div>
-                                                                </div>
-                                                        </div>
-                                                        <span class="love-icon"><i class="fa fa-heart"></i></span>
-                        
-                                                    <div class="single-cart-content">
-                                                        <div class="cart-content-left">
-                                                            <ul class="cart-rating">
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li><i class="fa fa-star"></i></li>
-                                                                <li class="diff-color"><i class="fa fa-star"></i></li>
-                                                            </ul>
-                                                            <h5>Belted Chino Trousers</h5>
-                                                            <ul class="cart-size">
-                                                                <li><span>xs</span></li>
-                                                                <li class="active"><span>s</span></li>
-                                                                <li><span>m</span></li>
-                                                                <li><span>l</span></li>
-                                                                <li><span>xl</span></li>
-                                                            </ul>
-                                                        </div>
-                        
-                                                        <div class="cart-content-right">
-                                                            <span class="current-price">$45.99</span>
-                                                            <span class="old-price">$99.10</span>
-                                                        </div>
-                                                    </div>
-                        
-                                                    <div class="single-cart-button">
-                                                        <a href="#" class="cart-button floating-icon-1">add to cart</a>
-                                                        <a href="#" class="compare-button">compare</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Also Like End -->
-
-                        
-
                     </div>
 
                     <div class="tab-second-content lost">
@@ -330,10 +128,10 @@
                                         <h4>Delivery</h4>
                                     </div>
                                     <div class="delivery-center">
-                                        <ul>
-                                            <li class="active"><h4>Standard delivery 3-5 business days</h4></li>
-                                            <li><h4>Next day & evening delivery</h4><h6>Order before 8 pm for delivery tomorrow</h6></li>
-                                            <li><h4>Nomited day delivery</h4><h6>Pick date from the calendar</h6></li>
+                                        <ul id="results">
+                                            <li class="device_result searchterm active" data-deli="7"><h4>Standard delivery 3-5 business days</h4></li>
+                                            <li class="device_result searchterm" data-deli="19"><h4>Next day & evening delivery</h4><h6>Order before 8 pm for delivery tomorrow</h6></li>
+                                            <li class="device_result searchterm" data-deli="29"><h4>Nomited day delivery</h4><h6>Pick date from the calendar</h6></li>
                                         </ul>
                                     </div>
                                     <div class="delivery-right">
@@ -355,45 +153,45 @@
                                             <h6>Billing address is the same as delivery address</h6>
                                         </div>
 
-                                        <form action="#" class="mt-70">
+                                        <form action="#" class="mt-70" id="infor">
                                             <div class="common-input2 mb-5">
                                                 <h6>Full Name*</h6>
-                                                <input type="text" placeholder="e.i Annastasia Alatore">
+                                                <input type="text" placeholder="e.i Annastasia Alatore" name="name">
                                             </div>
                                             
                                             <div class="common-input2 mb-5">
                                                 <h6>Zip / Postal Code*</h6>
-                                                <input type="text" placeholder="e.i EC1A 1AA">
+                                                <input type="text" placeholder="e.i EC1A 1AA" name="code">
                                             </div>
 
                                             <div class="diffrent-input d-md-flex mb-5">
                                                 <div class="common-input2">
                                                     <h6>House Number*</h6>
-                                                    <input type="text" class="input-small" placeholder="e.i 221B">
+                                                    <input type="text" class="input-small" placeholder="e.i 221B" name="house">
                                                 </div>
                                                 <div class="common-input2">
                                                     <h6>Street*</h6>
-                                                    <input type="text" class="input-large" placeholder="e.i Dorset">
+                                                    <input type="text" class="input-large" placeholder="e.i Dorset" name="street">
                                                 </div>
                                                 <div class="common-input2 input-small2">
                                                     <h6>Appartment*</h6>
-                                                    <input type="text" class="input-small" placeholder="e.i 14">
+                                                    <input type="text" class="input-small" placeholder="e.i 14" name="apart">
                                                 </div>
                                             </div>
 
                                             <div class="common-input2 mb-5">
                                                 <h6>Town / City*</h6>
-                                                <input type="text" placeholder="e.i London">
+                                                <input type="text" placeholder="e.i London" name="city">
                                             </div>
 
                                             <div class="common-input2 mb-5">
                                                 <h6>Country*</h6>
-                                                <input type="text" placeholder="e.i UK">
+                                                <input type="text" placeholder="e.i UK" name="country">
                                             </div>
 
                                             <div class="common-input2 mb-5">
                                                 <h6>Phone Number*</h6>
-                                                <input type="text" placeholder="e.i +230 544 65768*">
+                                                <input type="text" placeholder="e.i +230 544 65768*" name="phone">
                                             </div>
                                         </form>
                                     </div>
@@ -491,7 +289,7 @@
                         <div class="summary-section">
                             <div class="summary-header text-center">
                                 <img src='<c:url value="/resources/web/img/cart-tab-page/thanks.png"  />'class="mb-3">
-                                <h3>Thank You, John !</h3>
+                                <h3>Thank You,${dangnhap}!</h3>
                                 <p class="mt-4">Huraaay! You order has been placed successfully. <br>We received your payment and wrapping up your stuff for shipping</p>
                             </div>
 
@@ -504,62 +302,33 @@
                                                     <h4>Order Details</h4>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-8">
-                                                <div class="common-right pt-80 d-flex justify-content-between mb-70">
-                                                    <div class="slub-shirt">
-                                                        <h5>Slub shirt</h5>
-                                                        <ul class="mt-4">
-                                                            <li>#71839734342234</li>
-                                                            <li>Size:M</li>
-                                                            <li>Color:Pink</li>
-                                                            <li>Qty: 1 Item(shipping)</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="price">
-                                                        <h5>$26</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                             <div class="col-lg-8">
+                                               
+                                            </div> 
                                         </div>
-
-                                        <div class="row">
+                                        <c:forEach var="value" items="${carts}">
+											<div class="row">
                                             <div class="col-lg-8 offset-lg-4">
                                                 <div class="common-right d-flex justify-content-between mb-70">
                                                     <div class="slub-shirt">
-                                                        <h5>Denim Jacket</h5>
-                                                        <ul class="mt-4">
-                                                            <li>#71839734342234</li>
-                                                            <li>Size:M</li>
-                                                            <li>Color:Blue</li>
-                                                            <li>Qty: 2 Item(shipping)</li>
+                                                        <h5>${value.getTensp() }</h5>
+                                                        <ul class="mt-4">                          
+                                                            <li>${value.getTensize()}</li>
+                                                            <li>${value.getTenmau()}</li>
+                                                            <li>Qty: ${value.getSoluong()} Item(shipping)</li>
                                                         </ul>
                                                     </div>
                                                     <div class="price">
-                                                        <h5>$32</h5>
+                                                        <h5>${value.getGiatien() }</h5>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        </c:forEach>
+
+                                     
                                         
-                                        <div class="row">
-                                            <div class="col-lg-8 offset-lg-4">
-                                                <div class="common-right d-flex justify-content-between">
-                                                    <div class="slub-shirt">
-                                                        <h5>SweatShirt</h5>
-                                                        <ul class="mt-4">
-                                                            <li>#71839734342234</li>
-                                                            <li>Size:M</li>
-                                                            <li>Color:Grey</li>
-                                                            <li>Qty: 4 Item(shipping)</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="price">
-                                                        <h5>$100</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                       
 
                                     <div class="estimation-part mt-70">
                                         <div class="row">
@@ -574,16 +343,16 @@
                                                         <ul>
                                                             <li>#Order</li>
                                                             <li>Bonus / Discount</li>
-                                                            <li>Taxes</li>
+                                                            <li>Taxe</li>
                                                             <li class="mt-4">Total</li>
                                                         </ul>
                                                     </div>
                                                     <div class="price">
                                                         <ul>
-                                                            <li>$ 158</li>
-                                                            <li>$ -10</li>
+                                                            <li class="final">$0</li>
                                                             <li>$ 0</li>
-                                                            <li class="mt-4 final">$ 158,00</li>
+                                                            <li>$ 0</li>
+                                                            <li class="mt-4 final">$0</li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -603,23 +372,19 @@
                                                     <div class="address">
                                                         <h5>Shipping Address</h5>
                                                         <ul class="mt-4">
-                                                            <li>Anastasia Alatore</li>
-                                                            <li>EC1A 1AA</li>
-                                                            <li>221B Dorset</li>
-                                                            <li>London</li>
-                                                            <li>Uk</li>
-                                                            <li>+230 544 65 768</li>
+                                                            <li class="cname"></li>
+                                                            <li class="ccode"></li>
+                                                            <li class="caddress"></li>                                                     
+                                                            <li class="cphone"></li>
                                                         </ul>
                                                     </div>
                                                     <div class="billing">
                                                         <h5>Billing Address</h5>
                                                         <ul class="mt-4">
-                                                            <li>Anastasia Alatore</li>
-                                                            <li>EC1A 1AA</li>
-                                                            <li>221B Dorset</li>
-                                                            <li>London</li>
-                                                            <li>Uk</li>
-                                                            <li>+230 544 65 768</li>
+                                                            <li class="cname"></li>
+                                                            <li class="ccode"></li>
+                                                            <li class="caddress"></li>                                                     
+                                                            <li class="cphone"></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -632,13 +397,13 @@
                                                     <div class="method">
                                                         <h5>Shipping Method</h5>
                                                         <ul class="mt-4">
-                                                            <li>Standard 3-5 Business days</li>
+                                                            <li class="cost">Standard 3-5 Business days</li>
                                                         </ul>
                                                     </div>
                                                     <div class="payment">
                                                         <h5>Payment Method</h5>
                                                         <ul class="mt-4">
-                                                            <li>Credit Card 123456789101</li>
+                                                            <li>Money</li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -671,14 +436,14 @@
                                 <ul>
                                     <li>Order</li>
                                     <li>Bonus / Discount</li>
-                                    <li>Taxes</li>
+                                    <li>Taxe</li>
                                 </ul>
                             </div>
                             <div class="price">
                                 <ul>
-                                    <li>$ 158</li>
-                                    <li>$ -10</li>
-                                    <li>$ 0</li>
+                                    <li class="final" id="order">$ 0</li>
+                                    <li class="discount">$ 0</li>
+                                    <li class="cost1">$ 0</li>
                                 </ul>
                             </div>
                         </div>
@@ -688,13 +453,14 @@
                     <div class="estimation-right text-right">
                         <div class="right-title">
                             <h4>Total</h4>
-                            <h3 class="final">$ 158,00</h3>
+                            <h3 class="final">$ 0</h3>
                             <a href="#" class="template-btn2 off1">Checkout <span>&rharu;</span></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
 </section>
 <!-- Estimation Section End -->
 
