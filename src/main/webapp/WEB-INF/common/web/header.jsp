@@ -292,9 +292,8 @@
                 <li>
                		 <a href="/Fashion/shoppage/">Shop</a>
                 </li>
-                <li class="menu-item-has-children mega-menu-list">
-                        <a href="#">Pages</a>
-
+                <li>
+                        <a href="/Fashion/Blog/">Pages</a>
                     </li>
                 <li>
                     <a href="/Fashion/Contact/">Contact Us</a>

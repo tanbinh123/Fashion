@@ -2,7 +2,10 @@ package com.manhnguyen.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpSession;
 
@@ -18,9 +21,14 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.manhnguyen.entity.ChiTietHoaDon;
+import com.manhnguyen.entity.ChiTietHoaDonId;
 import com.manhnguyen.entity.ChiTietSanPham;
 import com.manhnguyen.entity.GioHang;
+import com.manhnguyen.entity.HoaDon;
 import com.manhnguyen.entity.SanPham;
+import com.manhnguyen.service.BillDetailService;
+import com.manhnguyen.service.BillService;
 import com.manhnguyen.service.ProductService;
 
 @Controller
@@ -29,6 +37,10 @@ import com.manhnguyen.service.ProductService;
 public class ApiController {
 	@Autowired
 	ProductService productService;
+	@Autowired
+	BillService billService;
+	@Autowired
+	BillDetailService billDetailService;
 
 	@GetMapping("pagging")
 	@ResponseBody
@@ -158,6 +170,43 @@ public class ApiController {
 		  }
 		
 		  
+	  }
+	  // add Bill customer
+	  @GetMapping("addBill")
+	  @ResponseBody
+	  public void addBillCustomer(@RequestParam String datajson,HttpSession httpSession) throws IOException {
+		  if(httpSession!=null) {
+			  ObjectMapper mapper=new ObjectMapper();
+			  JsonNode jsonNode=mapper.readTree(datajson);
+			  String name=jsonNode.get("name").asText();
+			  String address=jsonNode.get("address").asText();
+			  String phone=jsonNode.get("phone").asText();
+			  String delivery=jsonNode.get("delivery").asText();
+			  HoaDon hd=new HoaDon();
+			  hd.setTenkhachhang(name);
+			  hd.setSodt(phone);
+			  hd.setTinhtrang(false);
+			  hd.setNgaylap(java.time.LocalDate.now().toString());
+			  hd.setDiachigiaohang(address);
+			  int id=billService.addBillCustomer(hd);
+			  List<GioHang>lists=(List<GioHang>) httpSession.getAttribute("carts");
+			  if(id>0) 
+			  {
+				  for (GioHang gioHang : lists) {
+					  ChiTietHoaDonId ctChiTietHoaDonId=new ChiTietHoaDonId();
+					  ctChiTietHoaDonId.setMachitietsanpham(gioHang.getMachitiet());
+					  ctChiTietHoaDonId.setMahoadon(hd.getMahoadon());
+					  ChiTietHoaDon billDetail=new ChiTietHoaDon();
+					  billDetail.setChiTietHoaDonId(ctChiTietHoaDonId);
+					  billDetail.setGiatien(gioHang.getGiatien());
+					  billDetail.setSoluong(gioHang.getSoluong());
+					  billDetailService.addBillDetail(billDetail);
+				}
+			  }
+			 
+			 
+			  System.out.println(id);
+		  }
 	  }
 	 
 	 

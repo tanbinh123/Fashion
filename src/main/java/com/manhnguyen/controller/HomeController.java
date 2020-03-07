@@ -128,5 +128,9 @@ public class HomeController {
 		
 		return "web/404";
 	}
+	@GetMapping("Blog/")
+	public String Blog(ModelMap map) {
+		return "web/blog-page";
+	}
 
 }

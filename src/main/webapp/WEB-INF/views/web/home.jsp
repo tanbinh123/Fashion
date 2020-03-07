@@ -20,6 +20,7 @@
     <!-- magnific popup -->
     <link rel="stylesheet" href='<c:url value="/resources/web/css/magnific-popup.css"/>'>
     <!-- owl carousel -->
+   
     <link rel="stylesheet" href='<c:url value="/resources/web/css/owl.carousel.min.css"/>'>
     <!-- fontawesome -->
     <link rel="stylesheet" href='<c:url value="/resources/web/css/font-awesome.min.css"/>'>
@@ -334,7 +335,7 @@
                     </div>
                     <p>${discount.getMota() }</p>
                     <div class="btn-margin-top mb-5 mb-lg-0">
-                        <a href="#" class="template-btn2">view items <span>&rharu;</span></a>
+                        <a href="/Fashion/shoppage/" class="template-btn2">view items <span>&rharu;</span></a>
                     </div>
                 </div>
             </div>
@@ -388,15 +389,16 @@
                 <div class="tab-one-content lost active">
                     <div class="row">
                         <!-- procduct start  -->
-                        <a href="#">
+                        
                         <c:forEach var="sanpham" items="${list}">
                         <div class="col-lg-3 col-md-6">
                     <!-- dẫn đến item shoppage -->   
-                     <a href="#">
+                   
                             <div class="single-cart-item">
                              
                                 <div class="single-cart-image">
-                                    <img class="image-item-01 item-active" src='<c:url value="/resources/web/img/shop-page/${sanpham.getHinhsanpham()}"/>' alt="">
+                                  <a href="/Fashion/shoppage/${sanpham.getMasanpham()}/detail"><img class="image-item-01 item-active" src='<c:url value="/resources/web/img/shop-page/${sanpham.getHinhsanpham()}"/>' alt=""> 
+                                </a>
                                 </div>
                        		  
                                 <span class="love-icon"><i class="fa fa-heart"></i></span>
@@ -435,17 +437,17 @@
                                     <a href="#" class="cart-button floating-icon-1">add to cart</a>
                                 </div> -->
                             </div>
-                            </a>
+                           
                        
                         </div>
 						</c:forEach>
                      <!-- product end  -->  
-                          </a>  
             </div>
     
             <div class="text-center">
-                <a href="#" class="template-btn2">view items <span>&rharu;</span></a>
+                <a href="/Fashion/shoppage/" class="template-btn2">view items <span>&rharu;</span></a>
             </div>
+        </div>
         </div>
 </section>
 <!-- Picks End -->

@@ -224,10 +224,10 @@ $(document).ready(function(){
 		$(this).parents().find(".ccode").text(code);
 		$(this).parents().find(".caddress").text(address);
 		$(this).parents().find(".cphone").text(phone);
-		console.log(name+address+phone);
+		//console.log(name+address+phone);
 	})
 	//load data insert bill
-	$(".off1").on("change",function(){
+	$(".off1").on("click",function(){
 		var pa=$(this).parents().find("#infor");
 		var name = pa.find('input[name="name"]').val();
 		var code=pa.find('input[name="code"]').val();
@@ -244,9 +244,24 @@ $(document).ready(function(){
 		json["phone"]=phone;
 		json["delivery"]="money";
 		json["cost"]=$(this).parents().find(".searchterm.active").attr("data-deli");
+		console.log(json);
+		$.ajax({
+			url:"/Fashion/api/addBill",
+			type:"GET",
+			data:{
+				datajson:JSON.stringify(json)
+			},
+			success: function(value){
+				
+			}	
+	})
 		
 		
 	})
+
+
+        
+      
 	
 
 });
