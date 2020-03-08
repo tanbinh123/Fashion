@@ -171,7 +171,10 @@ public class ApiController {
 		
 		  
 	  }
+<<<<<<< HEAD
 	  // add Bill customer
+=======
+>>>>>>> 648b15998c08d58e3f0ef44d9574a412de8e1fe1
 	  @GetMapping("addBill")
 	  @ResponseBody
 	  public void addBillCustomer(@RequestParam String datajson,HttpSession httpSession) throws IOException {
