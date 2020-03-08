@@ -34,7 +34,7 @@ import com.manhnguyen.service.ProductService;
 @Controller
 @RequestMapping(value = "api/")
 @SessionAttributes({ "carts", "dangnhap" })
-public class ApiController {
+public class APIController {
 	@Autowired
 	ProductService productService;
 	@Autowired
@@ -171,7 +171,7 @@ public class ApiController {
 		
 		  
 	  }
-	  // add Bill customer
+
 	  @GetMapping("addBill")
 	  @ResponseBody
 	  public void addBillCustomer(@RequestParam String datajson,HttpSession httpSession) throws IOException {
