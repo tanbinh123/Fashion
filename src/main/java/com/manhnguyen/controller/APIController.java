@@ -26,9 +26,11 @@ import com.manhnguyen.entity.ChiTietHoaDonId;
 import com.manhnguyen.entity.ChiTietSanPham;
 import com.manhnguyen.entity.GioHang;
 import com.manhnguyen.entity.HoaDon;
+import com.manhnguyen.entity.NhanVien;
 import com.manhnguyen.entity.SanPham;
 import com.manhnguyen.service.BillDetailService;
 import com.manhnguyen.service.BillService;
+import com.manhnguyen.service.EmployeeService;
 import com.manhnguyen.service.ProductService;
 
 @Controller
@@ -42,6 +44,8 @@ public class APIController {
 	@Autowired
 	BillDetailService billDetailService;
 
+	@Autowired
+	EmployeeService empl;
 	@GetMapping("pagging")
 	@ResponseBody
 	public String pagging(@RequestParam int start) {
@@ -207,6 +211,37 @@ public class APIController {
 			 
 			  System.out.println(id);
 		  }
+	  }
+	  ////////////////////////////////API Admin page
+	  @GetMapping("loginAdmin")
+	  @ResponseBody
+	  public String Login(@RequestParam String username,@RequestParam String password,ModelMap map) {
+		  boolean check=empl.checkLogin(username, password);
+		  if(check==true) {
+			map.addAttribute("dangnhap",username);
+			  return "true";
+		  }
+		  return "false";
+	  }
+	  @GetMapping("siginAdmin")
+	  @ResponseBody
+	  public String Sigin(@RequestParam String json) throws IOException {
+		 ObjectMapper objectMapper=new ObjectMapper();
+		 JsonNode jsonNode=objectMapper.readTree(json);
+		 String password=jsonNode.get("password").asText();
+		 String repass=jsonNode.get("repass").asText();
+		 if(password.equals(repass)) {
+			 NhanVien nhanVien=new NhanVien();
+			 nhanVien.setHoten(jsonNode.get("name").asText());
+			 nhanVien.setTendangnhap(jsonNode.get("email").asText());
+			 nhanVien.setMatkhau(password);
+			 nhanVien.setEmail(jsonNode.get("email").asText());
+			 empl.insertCustomer(nhanVien);
+			 return "true";
+			 
+		 }
+		return "false";
+		  
 	  }
 	 
 	 
