@@ -204,6 +204,7 @@ public class APIController {
 					  billDetail.setChiTietHoaDonId(ctChiTietHoaDonId);
 					  billDetail.setGiatien(gioHang.getGiatien());
 					  billDetail.setSoluong(gioHang.getSoluong());
+					  billDetail.setNgayhd(java.time.LocalDate.now().toString());
 					  billDetailService.addBillDetail(billDetail);
 				}
 			  }

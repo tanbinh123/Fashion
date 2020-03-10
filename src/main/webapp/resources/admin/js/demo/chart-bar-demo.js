@@ -29,16 +29,28 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 
 // Bar Chart Example
 var ctx = document.getElementById("myBarChart");
+var x = document.getElementsByClassName("x1");
+var i;
+var tilt=[];
+var month=[]
+for (i = 0; i < x.length; i++) {
+  month[i]=x[i].getAttribute("data-month");
+  tilt[i]=x[i].getAttribute("data-price");
+}
+
+console.log(tilt);
+
+
 var myBarChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: [month[0],month[1],month[2], month[3], month[4],month[5]],
     datasets: [{
       label: "Revenue",
       backgroundColor: "#4e73df",
       hoverBackgroundColor: "#2e59d9",
       borderColor: "#4e73df",
-      data: [4215, 5312, 6251, 7841, 9821, 14984],
+      data: [tilt[0],tilt[1],tilt[2],tilt[3],tilt[4],tilt[5]],
     }],
   },
   options: {

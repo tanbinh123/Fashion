@@ -26,13 +26,21 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   }
   return s.join(dec);
 }
-
+//load data form db
+var x = document.getElementsByClassName("x1");
+var i;
+var tilt=[];
+var month=[]
+for (i = 0; i < x.length; i++) {
+  month[i]=x[i].getAttribute("data-month");
+  tilt[i]=x[i].getAttribute("data-price");
+}
 // Area Chart Example
 var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    labels: [month[0], month[1],month[2], month[3], month[4], month[5],month[6],month[7],month[8],month[9],month[10],month[11]],
     datasets: [{
       label: "Earnings",
       lineTension: 0.3,
@@ -46,7 +54,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBorderColor: "rgba(78, 115, 223, 1)",
       pointHitRadius: 10,
       pointBorderWidth: 2,
-      data: [0, 10000, 5000, 15000, 10000, 20000, 15000, 25000, 20000, 30000, 25000, 40000],
+      data: [tilt[0],tilt[1], tilt[2], tilt[3], tilt[4], tilt[5],tilt[6],tilt[7], tilt[8],tilt[9], tilt[10], tilt[11]],
     }],
   },
   options: {

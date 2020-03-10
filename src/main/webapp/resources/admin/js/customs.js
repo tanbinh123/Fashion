@@ -14,7 +14,7 @@ $(document).ready(function(){
 			},
 			success: function(value){
 				if(value=="true"){
-					 window.location="/Fashion/";
+					 window.location="/Fashion/admin/";
 				}else{
 					$("#checklogin").text("Đăng nhập thất bại");
 				}
@@ -42,7 +42,9 @@ $(document).ready(function(){
 				
 			},
 			success: function(value){
-				alert(value);
+				if(value=="true"){
+					 window.location="/Fashion/admin/LoginAdmin/";
+				}
 			}	
 	})
 	})

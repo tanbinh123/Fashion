@@ -13,6 +13,7 @@ public class ChiTietHoaDon implements Serializable {
 	ChiTietHoaDonId chiTietHoaDonId;
 	private int soluong;
 	private String giatien;
+	private String ngayhd;
 	public ChiTietHoaDonId getChiTietHoaDonId() {
 		return chiTietHoaDonId;
 	}
@@ -30,6 +31,12 @@ public class ChiTietHoaDon implements Serializable {
 	}
 	public void setGiatien(String giatien) {
 		this.giatien = giatien;
+	}
+	public String getNgayhd() {
+		return ngayhd;
+	}
+	public void setNgayhd(String ngayhd) {
+		this.ngayhd = ngayhd;
 	}
 	
 	
