@@ -1,5 +1,7 @@
 package com.manhnguyen.dao;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
@@ -27,6 +29,14 @@ public class ContactDAO implements ContactImpl {
 		}else {
 			return false;
 			}
+	}
+
+	@Transactional
+	public List<Contact> getMessage() {
+		Session session=sessionFactory.getCurrentSession();
+		String sql="from CONTACT";
+		List<Contact>list=session.createQuery(sql).getResultList();
+		return list;
 	}
 
 }

@@ -1,9 +1,12 @@
 package com.manhnguyen.dao;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
@@ -29,6 +32,25 @@ public class BillDetailDAO implements BillDetail{
 		}
 		return false;
 	}
+	@Transactional
+	public Double totalBill(int index) {
+		Session session=sessionFactory.getCurrentSession();
+		//index ==1 select total month
+		//index !=1 select total year
+		String sql="";
+		if(index==1) {
+			 sql+="SELECT sum(giatien) FROM CHITIETHOADON where month(ngayhd)=month(sysdate())";
+		}else {
+			 sql+="SELECT sum(giatien) FROM CHITIETHOADON where year(ngayhd)=year(sysdate())";
+		}
+		
+		Double x= Double.parseDouble((String) session.createQuery(sql).getSingleResult());
+		//System.out.println(x);
+
+		return x;
+	}
+
+	
 	
 
 }

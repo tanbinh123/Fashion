@@ -54,6 +54,17 @@ public class BillDAO implements BillImpl{
 	  
 	    return listex;
 	}
+
+	@Transactional
+	public List<HoaDon> getListCheckOut() {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.getCurrentSession();
+		String sql="from HOADON where tinhtrang='0'";
+		List<HoaDon>list=session.createQuery(sql).getResultList();
+		return list;
+	}
+
+	
 	
 
 }

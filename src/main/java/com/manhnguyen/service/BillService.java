@@ -22,5 +22,10 @@ public class BillService implements BillImpl {
 		// TODO Auto-generated method stub
 		 return billDAO.list();
 	}
+	public List<HoaDon> getListCheckOut() {
+		// TODO Auto-generated method stub
+		return billDAO.getListCheckOut();
+	}
+	
 
 }

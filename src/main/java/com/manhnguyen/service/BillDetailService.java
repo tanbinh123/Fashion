@@ -16,5 +16,10 @@ public class BillDetailService implements BillDetail {
 		// TODO Auto-generated method stub
 		return billDetailDAO.addBillDetail(cthd);
 	}
+	public Double totalBill(int index) {
+		// TODO Auto-generated method stub
+		return billDetailDAO.totalBill(index);
+	}
+	
 
 }
