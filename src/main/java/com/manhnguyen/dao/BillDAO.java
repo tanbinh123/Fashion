@@ -47,7 +47,7 @@ public class BillDAO implements BillImpl{
 			String month=objects[1].toString();
 			Charts charts=new Charts();
 			charts.setMonth(Integer.parseInt(month));
-			charts.setPrice(Double.parseDouble(price)*100);
+			charts.setPrice(Double.parseDouble(price));
 			listex.add(charts);
 			
 		}

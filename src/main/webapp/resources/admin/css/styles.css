@@ -1,0 +1,13 @@
+.btn-accept{
+	 position:absolute;
+    transition: .5s ease;
+    left: 50%;
+    opacity: 0.5;
+	
+}
+.btn-accept:hover {
+	opacity: 1;
+}
+.hide1{
+	display: none;
+}

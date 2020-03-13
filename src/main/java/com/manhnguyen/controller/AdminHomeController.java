@@ -9,11 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.manhnguyen.entity.Charts;
+import com.manhnguyen.entity.ChiTietHoaDon;
+import com.manhnguyen.entity.ChiTietHoaDonId;
 import com.manhnguyen.service.BillDetailService;
 import com.manhnguyen.service.BillService;
 import com.manhnguyen.service.ContactService;
@@ -51,8 +54,6 @@ public class AdminHomeController {
 		map.addAttribute("numContact",contact.getMessage().size());
 		//list message
 		map.addAttribute("listMessage", contact.getMessage());
-		
-		
 		return "admin/home";
 	}
 	@GetMapping("SinginAdmin/")
@@ -69,14 +70,14 @@ public class AdminHomeController {
 	}
 	@GetMapping("tableproduct/")
 	public String tableProduct(ModelMap map) {
-		//bill check out
-		map.addAttribute("numbill", bill.getListCheckOut().size());
-				//list ordered of customer
-		map.addAttribute("listOrder",bill.getListCheckOut());
-				//contact
-		map.addAttribute("numContact",contact.getMessage().size());
-				//list message
-		map.addAttribute("listMessage", contact.getMessage());
+		
+		  //bill check out 
+		  map.addAttribute("numbill", bill.getListCheckOut().size());
+		  //list ordered of customer
+		  map.addAttribute("listOrder",bill.getListCheckOut()); //contact
+		  map.addAttribute("numContact",contact.getMessage().size()); //list message
+		  map.addAttribute("listMessage", contact.getMessage());
+		 
 		return "admin/tables";
 	}
 	@GetMapping("charts/")
@@ -94,5 +95,4 @@ public class AdminHomeController {
 		return "admin/charts";
 		
 	}
-
 }

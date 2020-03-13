@@ -88,7 +88,7 @@
                       <td>${item.getSodt() }</td>
                       <td>${item.getDiachigiaohang() }</td>
                       <td>${item.getNgaylap() }</td>
-                      <td>${item.getTinhtrang() }</td>
+                      <td><a href='<c:url value="/admin/orders/order/${item.getMahoadon()}/"/>'>${item.getTinhtrang() }</a></td>
                     </tr>
                   </c:forEach>
                    

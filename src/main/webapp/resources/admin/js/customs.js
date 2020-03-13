@@ -48,5 +48,15 @@ $(document).ready(function(){
 			}	
 	})
 	})
+	$(".btn-accept").on("click",function(){
+		$(this).hide();
+		$(".alert-success").removeClass("hide1");
+		$(".alert-success").text("Accepted Success");
+		$(".alert-success").css('text-align','center');
+		
+		
+		
+		
+	})
 
 })

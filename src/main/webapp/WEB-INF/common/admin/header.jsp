@@ -54,19 +54,26 @@
                   Alerts Center
                 </h6>
                 <c:forEach items="${listOrder }" var="order">
-	                <a class="dropdown-item d-flex align-items-center" href="#">
+	                <a class="dropdown-item d-flex align-items-center" href='<c:url value="/admin/orders/order/${order.getMahoadon()}/"/>'>
 	                  <div class="mr-3">
+	                  
 	                    <div class="icon-circle bg-primary">
+	                   
 	                      <i class="fas fa-file-alt text-white"></i>
+	                     
 	                    </div>
+	                    
 	                  </div>
 	                  <div>
 	                    <div class="small text-gray-500">${order.getNgaylap() }</div>
-	                    <span class="font-weight-bold">${order.getTenkhachhang() } Ordered Num ${order.getMahoadon() }</span>
+	                   
+	                   <span class="font-weight-bold">${order.getTenkhachhang() } Ordered Num ${order.getMahoadon() } 
+	                   </span>
+	                   
 	                  </div>
 	                </a>
                 </c:forEach>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                <a class="dropdown-item text-center small text-gray-500" href='<c:url value="/admin/tableproduct/"/>'>Show All Alerts</a>
               </div>
             </li>
 

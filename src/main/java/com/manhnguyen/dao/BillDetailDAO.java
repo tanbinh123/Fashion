@@ -49,6 +49,14 @@ public class BillDetailDAO implements BillDetail{
 
 		return x;
 	}
+	@Transactional
+	public List<ChiTietHoaDon> getBillDetail(int index) {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.getCurrentSession();
+		String sql="from CHITIETHOADON m where m.chiTietHoaDonId.mahoadon="+index;
+		List<ChiTietHoaDon> cthdChiTietHoaDonId=session.createQuery(sql).getResultList();
+		return cthdChiTietHoaDonId;
+	}
 
 	
 	
