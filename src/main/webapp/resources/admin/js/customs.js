@@ -48,12 +48,32 @@ $(document).ready(function(){
 			}	
 	})
 	})
+	
+	function hiddenBtn(){
+		s=$(".btn-accept").attr("data-state");
+		if(s==="true"){
+			$(".btn-accept").hide();
+		}
+	}
+	hiddenBtn();
 	$(".btn-accept").on("click",function(){
-		$(this).hide();
-		$(".alert-success").removeClass("hide1");
-		$(".alert-success").text("Accepted Success");
-		$(".alert-success").css('text-align','center');
-		
+		id=$(this).attr("data-id");
+		$.ajax({
+			url:"/Fashion/api/acceptOrder",
+			type:"GET",
+			data:{
+				id:id
+				
+			},
+			success: function(value){
+				if(value=="true"){
+					$(".btn-accept").hide();
+					$(".alert-success").removeClass("hide1");
+					$(".alert-success").text("Accepted Success");
+					$(".alert-success").css('text-align','center');
+				}
+			}	
+	})
 		
 		
 		

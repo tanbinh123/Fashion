@@ -244,6 +244,18 @@ public class APIController {
 		return "false";
 		  
 	  }
+	  @GetMapping("acceptOrder")
+	  @ResponseBody
+	  public String Accept(@RequestParam int id) {
+		  int check=billService.AcceptOrder(id);
+		  if(check==1) {
+			  return "true";
+		  }
+		  return "false";
+		  
+		  
+		  
+	  }
 	 
 	 
 

@@ -26,6 +26,10 @@ public class BillService implements BillImpl {
 		// TODO Auto-generated method stub
 		return billDAO.getListCheckOut();
 	}
+	public int AcceptOrder(int id) {
+		// TODO Auto-generated method stub
+		return billDAO.AcceptOrder(id);
+	}
 	
 
 }

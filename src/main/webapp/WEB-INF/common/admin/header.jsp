@@ -54,11 +54,11 @@
                   Alerts Center
                 </h6>
                 <c:forEach items="${listOrder }" var="order">
-	                <a class="dropdown-item d-flex align-items-center" href='<c:url value="/admin/orders/order/${order.getMahoadon()}/"/>'>
+	                <a class="dropdown-item d-flex align-items-center" href='<c:url value="/admin/orders/order/${order.getMahoadon()}/${order.getTinhtrang()}"/>'>
 	                  <div class="mr-3">
 	                  
 	                    <div class="icon-circle bg-primary">
-	                   
+	               
 	                      <i class="fas fa-file-alt text-white"></i>
 	                     
 	                    </div>

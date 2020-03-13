@@ -26,13 +26,14 @@ public class AdminOrder {
 	BillDetailService billdt;
 	@Autowired
 	ContactService contact;
-	@GetMapping("order/{id}")
-	public String getOrder(@PathVariable int id,ModelMap map) {
+	@GetMapping("order/{id}/{x}")
+	public String getOrder(@PathVariable int id,ModelMap map,@PathVariable boolean x) {
 		List<ChiTietHoaDon>list=billdt.getBillDetail(id);
 		float sum=0;
 		for (ChiTietHoaDon chiTietHoaDon : list) {
 			sum+=Float.parseFloat(chiTietHoaDon.getGiatien())*chiTietHoaDon.getSoluong();
 		}
+		//bill.AcceptOrder(2);
 		map.addAttribute("numbill", bill.getListCheckOut().size());
 		//list ordered of customer
 		map.addAttribute("listOrder",bill.getListCheckOut());
@@ -42,6 +43,7 @@ public class AdminOrder {
 		map.addAttribute("listMessage", contact.getMessage());
 		map.addAttribute("productdetail", list);
 		map.addAttribute("sumOrder", sum);
+	
 		return "admin/blank";
 	}
 

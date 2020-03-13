@@ -88,9 +88,9 @@
                 </table>
                  <h1 style="text-align: center;">Total:$${sumOrder }</h1>
                   <div class="alert alert-success hide1" role="alert">
- 						<a href="#" class="alert-link" ></a>
+ 						<a href="#" class="alert-link" data-state=${x } ></a>
 				</div>
-                 <a href="#" class="btn btn-primary btn-accept " >Accept</a>
+                 <a href="#" class="btn btn-primary btn-accept " data-id=${id } data-state=${x } >Accept</a>
                 
               </div>
             </div>

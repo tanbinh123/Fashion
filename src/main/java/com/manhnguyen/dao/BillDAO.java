@@ -59,9 +59,18 @@ public class BillDAO implements BillImpl{
 	public List<HoaDon> getListCheckOut() {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.getCurrentSession();
-		String sql="from HOADON where tinhtrang='0'";
+		String sql="from HOADON where tinhtrang=0";
 		List<HoaDon>list=session.createQuery(sql).getResultList();
 		return list;
+	}
+
+	@Transactional
+	public int AcceptOrder(int id) {
+		Session session=sessionFactory.getCurrentSession();
+		String sql="Update HOADON set tinhtrang=1 where mahoadon="+id;
+		int check=session.createQuery(sql).executeUpdate();
+		//System.out.println(check);
+		return check;
 	}
 
 	
