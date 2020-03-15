@@ -13,6 +13,9 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
 
 import com.manhnguyen.daoimpl.ProductImpl;
+import com.manhnguyen.entity.ChiTietHoaDon;
+import com.manhnguyen.entity.ChiTietHoaDonId;
+import com.manhnguyen.entity.ChiTietSanPham;
 import com.manhnguyen.entity.SanPham;
 
 @Repository
@@ -43,6 +46,11 @@ public class ProductDAO implements ProductImpl{
 			list= session.createQuery(sql).setFirstResult(start).setMaxResults(9).getResultList();
 			
 		}
+		if(id==3) {
+			Session session=sessionFactory.getCurrentSession();
+			String sql="from SANPHAM";
+			list=session.createQuery(sql).getResultList();
+		}
 		return list;
 		
 	}
@@ -68,6 +76,17 @@ public class ProductDAO implements ProductImpl{
 		List<SanPham>list=session.createQuery(sql).getResultList();
 		
 		return list;
+	}
+	@Transactional
+	public boolean deleteProduct(int id) {
+		Session session=sessionFactory.getCurrentSession();
+		SanPham sp=new SanPham();
+		sp.setMasanpham(id);
+		ChiTietSanPham ctspChiTietSanPham=new ChiTietSanPham();
+		ctspChiTietSanPham.setSanpham(sp);
+		session.delete(ctspChiTietSanPham);
+		session.delete(sp);
+		return false;
 	}
 	
 

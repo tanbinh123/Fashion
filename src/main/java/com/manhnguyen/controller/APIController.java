@@ -256,6 +256,11 @@ public class APIController {
 		  
 		  
 	  }
+	  @GetMapping("deleteProduct")
+	  @ResponseBody
+	  public void deleteProduct(@RequestParam int id) {
+		  productService.deleteProduct(id);
+	  }
 	 
 	 
 

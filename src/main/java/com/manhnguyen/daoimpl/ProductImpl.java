@@ -10,5 +10,6 @@ public interface ProductImpl {
 	public List<SanPham> getList_Category(int id);
 	public SanPham getDetail(int id);
 	public List<SanPham> search(String key);
+	public boolean deleteProduct(int id);
 
 }

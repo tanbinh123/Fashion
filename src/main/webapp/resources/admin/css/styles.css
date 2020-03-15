@@ -11,3 +11,9 @@
 .hide1{
 	display: none;
 }
+#chitietsanpham{
+	display:none !important;
+}
+.add-detail{
+	color: blue;
+}

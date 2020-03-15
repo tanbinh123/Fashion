@@ -74,9 +74,48 @@ $(document).ready(function(){
 				}
 			}	
 	})
+	})
+	hidden()
+	function hidden(){
+		$(".addproduct").find("div").hide();
+		$(".btn-back").hide();
+		//$(".btn-back").css('display','none');
+	}
+	$(".btn-add").on("click",function(){
+		$(".card-body").find(".table-responsive").find("div").hide();
+		$(".card-body").find(".addproduct").find("div").show();
+		$(".btn-back").show();
 		
+	})
+	$("body").on("click",".add-detail",function(){
+		$(this).remove();
+		var chitietclone=$("#chitietsanpham").clone().removeAttr("id");
+		$("#containerchitietsanpham").append(chitietclone);
+	})
+	$(".btn-back").on("click",function(){
 		
+		$(".card-body").find(".addproduct").find("div").hide();
+		$(".card-body").find(".table-responsive").find("div").show();
+		$(this).hide();
 		
+	})
+	$("#dataTable").on("click",".btn-delete",function(event){
+		event.preventDefault();
+		alert("click");
+		data=$(this).attr("data-id");
+		alert(data);
+		$.ajax({
+			url:"/Fashion/api/deleteProduct",
+			type:"GET",
+			data:{
+				id:data
+				
+			},
+			success: function(value){
+				location.reload();
+			}	
+	})
+	
 	})
 
 })
