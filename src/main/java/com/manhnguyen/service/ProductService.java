@@ -37,5 +37,17 @@ public class ProductService implements ProductImpl{
 		// TODO Auto-generated method stub
 		return productDAO.deleteProduct(id);
 	}
+	public int addProduct(SanPham sp) {
+		// TODO Auto-generated method stub
+		return productDAO.addProduct(sp);
+	}
+	public SanPham getListProduct(int id) {
+		// TODO Auto-generated method stub
+		return productDAO.getListProduct(id);
+	}
+	public boolean updateProduct(SanPham sp) {
+		return productDAO.updateProduct(sp);
+		
+	}
 
 }

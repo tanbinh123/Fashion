@@ -1,12 +1,15 @@
 package com.manhnguyen.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,16 +21,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.manhnguyen.entity.ChiTietHoaDon;
 import com.manhnguyen.entity.ChiTietHoaDonId;
 import com.manhnguyen.entity.ChiTietSanPham;
+import com.manhnguyen.entity.DanhMucSanPham;
 import com.manhnguyen.entity.GioHang;
 import com.manhnguyen.entity.HoaDon;
+import com.manhnguyen.entity.JSONSanPham;
+import com.manhnguyen.entity.MauSanPham;
 import com.manhnguyen.entity.NhanVien;
 import com.manhnguyen.entity.SanPham;
+import com.manhnguyen.entity.SizeSanPham;
 import com.manhnguyen.service.BillDetailService;
 import com.manhnguyen.service.BillService;
 import com.manhnguyen.service.EmployeeService;
@@ -262,6 +271,134 @@ public class APIController {
 		  productService.deleteProduct(id);
 	  }
 	 
-	 
+	  	@Autowired
+		ServletContext context;
+		@PostMapping("UploadFile")
+		@ResponseBody
+		public String UploadFile(MultipartHttpServletRequest request) {
+			String path_save_file=context.getRealPath("/resources/web/img/shop-page/");
+			Iterator<String>listNames=request.getFileNames();
+			MultipartFile mpf=request.getFile(listNames.next());
+			File file_save=new File(path_save_file+mpf.getOriginalFilename());
+			try {
+				mpf.transferTo(file_save);
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println(file_save);
+			return"true";
+		}
+		@GetMapping("addProduct")
+		@ResponseBody
+		public String addProduct(@RequestParam String json) throws IOException {
+			ObjectMapper oMapper=new ObjectMapper();
+			JsonNode jsonNode=oMapper.readTree(json);
+			SanPham product=new SanPham();
+			product.setTensanpham(jsonNode.get("nameproduct").asText());
+			product.setGiatien(jsonNode.get("price").asInt());
+			product.setGianhcho(jsonNode.get("forcustomer").asText());
+			DanhMucSanPham category=new DanhMucSanPham();
+			category.setMadanhmuc(jsonNode.get("category").asInt());
+			product.setDanhMucSanPham(category);
+			product.setHinhsanpham(jsonNode.get("img").asText());
+			product.setMota(jsonNode.get("discriber").asText());
+			JsonNode jsonChitiet=jsonNode.get("detail");
+			Set<ChiTietSanPham>listProductDetail=new HashSet<ChiTietSanPham>();
+			for (JsonNode jsonNode2 : jsonChitiet) {
+				ChiTietSanPham detail=new ChiTietSanPham();
+				MauSanPham color=new MauSanPham();
+				color.setMamau(jsonNode2.get("color").asInt());
+				detail.setMauSanPham(color);
+				SizeSanPham size=new SizeSanPham();
+				size.setMasize(jsonNode2.get("size").asInt());
+				detail.setSizeSanPham(size);
+				detail.setSoluong(jsonNode2.get("quatity").asInt());
+				listProductDetail.add(detail);
+				detail.setNgaynhap(java.time.LocalDate.now().toString());
+				
+			}
+			product.setChiTietSanPhams(listProductDetail);
+			productService.addProduct(product);
+			
+			return "";
+		}
+		@PostMapping(path="getProduct", produces="application/json;charset=utf-8")
+		@ResponseBody
+		public JSONSanPham layDSSpTheoMa(@RequestParam int id) {
+			SanPham product=productService.getListProduct(id);
+			JSONSanPham json=new JSONSanPham();
+			json.setMasanpham(product.getMasanpham());
+			json.setTensanpham(product.getTensanpham());
+			json.setGiatien(product.getGiatien());
+			json.setGianhcho(product.getGianhcho());
+			json.setMota(product.getMota());
+			DanhMucSanPham danhMucSanPham = new DanhMucSanPham();
+			danhMucSanPham.setMadanhmuc(product.getDanhMucSanPham().getMadanhmuc());
+			danhMucSanPham.setTendanhmuc(product.getDanhMucSanPham().getTendanhmuc());
+			json.setDanhMucSanPham(danhMucSanPham);
+			Set<ChiTietSanPham> chiTietSanPhams = new HashSet<ChiTietSanPham>();
+			for (ChiTietSanPham value : product.getChiTietSanPhams()) {
+				ChiTietSanPham chiTietSp = new ChiTietSanPham();
+				
+				chiTietSp.setMachitietsanpham(value.getMachitietsanpham());
+				
+				MauSanPham mauSanPham = new MauSanPham();
+				mauSanPham.setMamau(value.getMauSanPham().getMamau());
+				mauSanPham.setTenmau(value.getMauSanPham().getTenmau());
+				
+				chiTietSp.setMauSanPham(mauSanPham);
+				
+				SizeSanPham sizeSanPham = new SizeSanPham();
+				sizeSanPham.setMasize(value.getSizeSanPham().getMasize());
+				sizeSanPham.setSize(value.getSizeSanPham().getSize());
+				
+				chiTietSp.setSizeSanPham(sizeSanPham);
+				chiTietSp.setSoluong(value.getSoluong());
+				
+				chiTietSanPhams.add(chiTietSp);
+			}
+			json.setChiTietSanPhams(chiTietSanPhams);
+			
+			return json;
+		
+		}
+		@GetMapping("updateProduct")
+		@ResponseBody
+		public void UpdateProduct(@RequestParam String json) throws IOException {
+			ObjectMapper oMapper=new ObjectMapper();
+			JsonNode jsonNode=oMapper.readTree(json);
+			SanPham product=new SanPham();
+			product.setTensanpham(jsonNode.get("nameproduct").asText());
+			product.setGiatien(jsonNode.get("price").asInt());
+			product.setGianhcho(jsonNode.get("forcustomer").asText());
+			DanhMucSanPham category=new DanhMucSanPham();
+			category.setMadanhmuc(jsonNode.get("category").asInt());
+			product.setDanhMucSanPham(category);
+			product.setHinhsanpham(jsonNode.get("img").asText());
+			product.setMota(jsonNode.get("discriber").asText());
+			JsonNode jsonChitiet=jsonNode.get("detail");
+			Set<ChiTietSanPham>listProductDetail=new HashSet<ChiTietSanPham>();
+			for (JsonNode jsonNode2 : jsonChitiet) {
+				ChiTietSanPham detail=new ChiTietSanPham();
+				MauSanPham color=new MauSanPham();
+				color.setMamau(jsonNode2.get("color").asInt());
+				detail.setMauSanPham(color);
+				SizeSanPham size=new SizeSanPham();
+				size.setMasize(jsonNode2.get("size").asInt());
+				detail.setSizeSanPham(size);
+				detail.setSoluong(jsonNode2.get("quatity").asInt());
+				listProductDetail.add(detail);
+				detail.setNgaynhap(java.time.LocalDate.now().toString());
+				
+			}
+			product.setChiTietSanPhams(listProductDetail);
+			product.setMasanpham(jsonNode.get("id").asInt());
+			productService.updateProduct(product);
+			
+		}
 
 }

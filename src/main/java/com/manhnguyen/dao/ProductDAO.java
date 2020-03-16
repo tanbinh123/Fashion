@@ -88,6 +88,26 @@ public class ProductDAO implements ProductImpl{
 		session.delete(sp);
 		return false;
 	}
+	@Transactional
+	public int addProduct(SanPham sp) {
+		Session session=sessionFactory.getCurrentSession();
+		session.save(sp);
+		return 0;
+	}
+	@Transactional
+	public SanPham getListProduct(int id) {
+		Session session=sessionFactory.getCurrentSession();
+		String sql="from SANPHAM sp where sp.masanpham ="+id;
+		SanPham product= (SanPham) session.createQuery(sql).getSingleResult();
+		return product;
+	}
+	@Transactional
+	public boolean updateProduct(SanPham sp) {
+		Session session=sessionFactory.getCurrentSession();
+		session.update(sp);
+		return false;
+		
+	}
 	
 
 }

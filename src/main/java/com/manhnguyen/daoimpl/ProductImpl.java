@@ -11,5 +11,8 @@ public interface ProductImpl {
 	public SanPham getDetail(int id);
 	public List<SanPham> search(String key);
 	public boolean deleteProduct(int id);
+	public int addProduct(SanPham sp);
+	public SanPham getListProduct(int id);
+	public boolean updateProduct(SanPham sp);
 
 }

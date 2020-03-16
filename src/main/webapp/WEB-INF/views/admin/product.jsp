@@ -100,7 +100,7 @@
                       <td>${item.getGianhcho() }</td>
                       <td>${item.getHinhsanpham()}</td>
                       <td><span class="btn btn-danger btn-delete" data-id=${item.getMasanpham() }>Delete</span>
-                      	 <span class="btn btn-info "data-id=${item.getMasanpham() } >Update</span>
+                      	 <span class="btn btn-info btn-update"data-id=${item.getMasanpham() } >Update</span>
                       </td>
                        
                     </tr>
@@ -113,39 +113,37 @@
               </div>
            	  <div class="addproduct">
            			<div>
-           				<form>
+           				<form >
 							  <div class="form-group">
 							    <label for="exampleFormControlInput1">Name Product</label>
-							    <input type="email" class="form-control" id="nameproduct">
+							    <input type="text" class="form-control" id="nameproduct" data-id=0>
 							  </div>
 							   <div class="form-group">
 							    <label for="exampleFormControlInput1">Price</label>
-							    <input type="email" class="form-control" id="price">
+							    <input type="text" class="form-control" id="price">
 							  </div>
 							  <div class="form-group">
-							    <label for="exampleFormControlSelect1">Category</label>
-							    <select class="form-control" id="exampleFormControlSelect1">
-							      <option>1</option>
-							      <option>2</option>
-							      <option>3</option>
-							      <option>4</option>
-							      <option>5</option>
+							    <label for="myselection">Category</label>
+							    <select class="form-control" id="myselection">
+							    <c:forEach var="item" items="${listcategory }">
+							      <option data-id=${item.getMadanhmuc() }>${item.getTendanhmuc()}</option>
+							    </c:forEach>					   
 							    </select>
 							  </div>
 							  <div class="form-group">
 							    <label for="exampleFormControlFile1">Image product</label>
-							    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+							    <input type="file" class="form-control-file" id="filename">
 							  </div>
 							  <div class="form-group">
-							    <label for="exampleFormControlSelect1">For</label>
-							    <select class="form-control" id="exampleFormControlSelect1">
+							    <label for="forcustomer">For</label>
+							    <select class="form-control" id="forcustomer">
 							      <option>Man</option>
 							      <option>Woman</option>
 							    </select>
 							  </div>
 							  <div class="form-group">
-							    <label for="exampleFormControlTextarea1">Discribe</label>
-							    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+							    <label for="discriber">Discribe</label>
+							    <textarea class="form-control" id="discriber" rows="3"></textarea>
 							  </div>
 							 
 							 <div id="containerchitietsanpham">
@@ -153,13 +151,13 @@
 								<span>Detail</span></br>
 								 <label for="">Color</label></br>
 								 <select  name="mausanpham"class="form-control" id="mausanpham">
-								   	<c:forEach var="value" items="${listmau }">
+								   	<c:forEach var="value" items="${listcolor }">
 												<option value="${value.getMamau() }">${value.getTenmau()}</option></br>
 									</c:forEach>
 								  </select>
 								   <label for="sizesanpham">Size</label></br>
 								   <select name="sizesanpham"class="form-control" id="sizesanpham">
-								   	<c:forEach var="value" items="${listsize }">
+								   	<c:forEach var="value" items="${sizecategory }">
 												<option value="${value.getMasize() }">${value.getSize()}</option></br>
 									</c:forEach>
 								  </select>
@@ -175,13 +173,13 @@
 								<span>Detail</span></br>
 								 <label for="">Color</label></br>
 								 <select  name="mausanpham"class="form-control" id="mausanpham">
-								   	<c:forEach var="value" items="${listmau }">
+								   	<c:forEach var="value" items="${listcolor }">
 												<option value="${value.getMamau() }">${value.getTenmau()}</option></br>
 									</c:forEach>
 								  </select>
 								   <label for="">Size</label></br>
 								   <select name="sizesanpham"class="form-control" id="sizesanpham">
-								   	<c:forEach var="value" items="${listsize }">
+								   	<c:forEach var="value" items="${sizecategory}">
 												<option value="${value.getMasize() }">${value.getSize()}</option></br>
 									</c:forEach>
 								  </select>
@@ -194,7 +192,8 @@
 				                    <span class="icon text-white-50">
 				                      <i class="fas fa-check"></i>
 				                    </span>
-				                    <span class="text">Add product</span>
+				                    <span class="text add-product btn-add-1">Add product</span>
+				                     <span class="text update-product">Update product</span>
 				                  </a>
 							</form>
 							
