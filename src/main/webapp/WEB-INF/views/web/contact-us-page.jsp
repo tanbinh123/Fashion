@@ -47,7 +47,7 @@
         <div class="row">
             <div class="col-lg-7">
                 <div class="contact-bg">
-                    <form action="/Fashion/sendContact/" method="post">
+                    <form action='<c:url value="/sendContact/"/>' method="post">
                         <h6>Full Name</h6>
                         <input type="text" placeholder="e.i Annastasia Alatore" name="fullname">
 

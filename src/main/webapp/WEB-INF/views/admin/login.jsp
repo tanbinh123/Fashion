@@ -20,6 +20,7 @@
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
   <!-- Custom styles for this template-->
+  
   <link href='<c:url value="/resources/admin/css/sb-admin-2.min.css"/>' rel="stylesheet">
 
 </head>
@@ -67,10 +68,10 @@
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="/Fashion/admin/forgotpassword/">Forgot Password?</a>
+                    <a class="small" href='<c:url value="/admin/admin/forgotpassword/"/>'>Forgot Password?</a>
                   </div>
                   <div class="text-center">
-                    <a class="small" href="/Fashion/admin/SinginAdmin/">Create an Account!</a>
+                    <a class="small" href='<c:url value="/admin/SinginAdmin/"/>'>Create an Account!</a>
                   </div>
                 </div>
               </div>

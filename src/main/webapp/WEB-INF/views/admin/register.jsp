@@ -68,10 +68,10 @@
               </form>
               <hr>
               <div class="text-center">
-                <a class="small" href="/Fashion/admin/forgotpassword/">Forgot Password?</a>
+                <a class="small" href='<c:url value="/admin/forgotpassword/"/>'>Forgot Password?</a>
               </div>
               <div class="text-center">
-                <a class="small" href="/Fashion/admin/LoginAdmin/">Already have an account? Login!</a>
+                <a class="small" href='<c:url value="/admin/LoginAdmin/"/>'>Already have an account? Login!</a>
               </div>
             </div>
           </div>

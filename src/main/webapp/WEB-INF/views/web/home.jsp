@@ -303,7 +303,7 @@
                 <div class="categories-item d-lg-flex justify-content-end">
                 <!-- Start load category -->
                 <c:forEach var="category" items="${listcategory}">
-                <a href="/Fashion/shoppage/${category.getMadanhmuc()}/${category.getTendanhmuc()}">
+                <a href='<c:url value="/shoppage/${category.getMadanhmuc()}/${category.getTendanhmuc()}"/>'>
                 	 <div class="single-item active fadeIn mb-5 mb-lg-0" data-wow-duration=".8s" data-wow-delay=".2s">
                         <div class="item-image "><!-- cat-1 -->
                         	<img class="img1"alt="" src='<c:url value="/resources/web/img/home-1/category/${category.getHinhdanhmuc() }"/>'>
@@ -335,7 +335,7 @@
                     </div>
                     <p>${discount.getMota() }</p>
                     <div class="btn-margin-top mb-5 mb-lg-0">
-                        <a href="/Fashion/shoppage/" class="template-btn2">view items <span>&rharu;</span></a>
+                        <a href='<c:url value="/shoppage/" />'class="template-btn2">view items <span>&rharu;</span></a>
                     </div>
                 </div>
             </div>
@@ -397,7 +397,7 @@
                             <div class="single-cart-item">
                              
                                 <div class="single-cart-image">
-                                  <a href="/Fashion/shoppage/${sanpham.getMasanpham()}/detail"><img class="image-item-01 item-active" src='<c:url value="/resources/web/img/shop-page/${sanpham.getHinhsanpham()}"/>' alt=""> 
+                                  <a href='<c:url value="/shoppage/${sanpham.getMasanpham()}/detail"/>'><img class="image-item-01 item-active" src='<c:url value="/resources/web/img/shop-page/${sanpham.getHinhsanpham()}"/>' alt=""> 
                                 </a>
                                 </div>
                        		  
@@ -445,7 +445,7 @@
             </div>
     
             <div class="text-center">
-                <a href="/Fashion/shoppage/" class="template-btn2">view items <span>&rharu;</span></a>
+                <a href='<c:url value="/shoppage/"/>' class="template-btn2">view items <span>&rharu;</span></a>
             </div>
         </div>
         </div>

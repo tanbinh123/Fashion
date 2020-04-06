@@ -113,7 +113,7 @@
         <div class="row">
        <div class="col-lg-3">
                 <div class="shop-sidebar">
-                    <form action="/Fashion/shoppage/search" method="get">
+                    <form action="'<c:url value="/shoppage/search"/>' method="get">
                         <input type="text" class="search-input" placeholder="Search" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search'" name="search">
                         <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
                     </form>
@@ -125,7 +125,7 @@
                         </div>
                         <ul>
                         <c:forEach var="listcate" items="${listcategory}">
-                        	  <li><a href="/Fashion/shoppage/${listcate.getMadanhmuc()}/${listcate.getTendanhmuc()}">${listcate.getTendanhmuc()}</a></li>
+                        	  <li><a href='<c:url value="/shoppage/${listcate.getMadanhmuc()}/${listcate.getTendanhmuc()}"/>'>${listcate.getTendanhmuc()}</a></li>
                         </c:forEach>
                         </ul>
                     </div>
@@ -185,7 +185,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="single-cart-item">
                                 <div class="single-cart-image">
-                                     <a href="/Fashion/shoppage/${sanpham.getMasanpham()}/detail"><img class="image-item-01 item-active" src='<c:url value="/resources/web/img/shop-page/${sanpham.getHinhsanpham()}"/>' alt="">
+                                     <a  href='<c:url value="/shoppage/${sanpham.getMasanpham()}/detail"/>'><img class="image-item-01 item-active" src='<c:url value="/resources/web/img/shop-page/${sanpham.getHinhsanpham()}"/>' alt="">
                                     </a>
                                 </div>
                                 <span class="love-icon"><i class="fa fa-heart"></i></span>

@@ -12,7 +12,7 @@
 <!-- search Popup -->
 <div class="body-overlay" id="body-overlay"></div>
 <div class="search-popup" id="search-popup">
-    <form action="/Fashion/shoppage/search" class="search-form">
+    <form action='<c:url value="/shoppage/search" />'class="search-form">
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Search" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Here'" name="search">
         </div>
@@ -66,7 +66,7 @@
         </div>
 
         <div class="cart-buttons mt-4 mt-xl-5">
-            <a  href="/Fashion/shoppage/carts" class="template-btn2 off2 mb-4">View Cart <span>&rharu;</span></a>
+            <a  href='<c:url value="/shoppage/carts"/>' class="template-btn2 off2 mb-4">View Cart <span>&rharu;</span></a>
         </div>
     </div>
 </div>
@@ -174,7 +174,7 @@
             <h2>Login</h2>
         </div>
 
-        <form action="/Fashion/Login/" method="post">
+        <form action='<c:url value="/Login/"/>' method="post">
             <div class="input-group mb-40">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope-o"></i></span>
@@ -204,7 +204,7 @@
             <h2>Sign Up</h2>
         </div>
 
-        <form action="/Fashion/Singin/" method="post">
+        <form action='<c:url value="/Singin/" />'method="post">
             <div class="input-group mb-4">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-user-o"></i></span>
@@ -287,16 +287,16 @@
         <div class="collapse navbar-collapse" id="bizcoxx_main_menu">
             <ul class="navbar-nav">
                 <li>
-                    <a href="/Fashion/" >Home</a>
+                    <a  href='<c:url value="/"/>' >Home</a>
                 </li>
                 <li>
-               		 <a href="/Fashion/shoppage/">Shop</a>
+               		 <a  href='<c:url value="/shoppage/"/>'>Shop</a>
                 </li>
                 <li>
-                        <a href="/Fashion/Blog/">Pages</a>
+                        <a  href='<c:url value="/Blog/"/>'>Pages</a>
                     </li>
                 <li>
-                    <a href="/Fashion/Contact/">Contact Us</a>
+                    <a  href='<c:url value="/Contact/"/>'>Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -314,7 +314,7 @@
 			       		  <li class="ml-3">
 			       		  	<a>${dangnhap}</a>
 			       		  </li>
-			       		  <li> <a href="/Fashion/Logout/"><i class="fa fa-sign-out" aria-hidden="true"></i></a>				 
+			       		  <li> <a  href='<c:url value="/Logout/"/>'><i class="fa fa-sign-out" aria-hidden="true"></i></a>				 
 			       		  </li>  
 			       		 
 			       	</c:when>
