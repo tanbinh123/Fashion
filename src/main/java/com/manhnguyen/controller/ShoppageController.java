@@ -111,6 +111,28 @@ public class ShoppageController {
 	public String cartItem(ModelMap map) {
 		return "web/cart-tab-page";
 	}
+	@GetMapping("page/{id}")
+	public String pagging(ModelMap map,@PathVariable String id) {
+		int start= (Integer.parseInt(id)-1)*9;
+		List<DanhMucSanPham> list=categoryService.CategoryList();
+		map.addAttribute("listcategory", list);
+		// get list size product
+		List<SizeSanPham>listsize=sizeService.getSizeProduct();
+		map.addAttribute("listsize",listsize);
+		// get list color product
+		List<MauSanPham> listcolor=colorService.colorList();
+		map.addAttribute("listcolor",listcolor);
+		// get list product
+		List<SanPham> listproduct=productService.getListProductShoppage(2,start);
+		map.addAttribute("listproduct",listproduct);
+		// all item 
+		List<SanPham> listboss=productService.getListProductShoppage(-1,0);
+		map.addAttribute("listboss",listboss);
+		// sum page load product
+		double num =Math.ceil((double)listboss.size()/9);
+		map.addAttribute("num",num);
+		return"web/shop-page";
+	}
 	
 
 }

@@ -39,6 +39,8 @@ $(document).ready(function(){
 	Total();
 	// add to cart
 	$("body").on("click",".on2",function(e){
+	
+		
 		e.preventDefault();
 		var formdata=$("#formSanPham").serializeArray();
 		json={};
@@ -75,9 +77,7 @@ $(document).ready(function(){
 		json["price"]=price;
 		json["iddetail"]=iddetail;
 		json["img"]=img;
-		
-		
-		
+		console.log(json);
 		
 		$.ajax({
 			url:"/Fashion/api/addToCart",

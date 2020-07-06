@@ -14,20 +14,20 @@
     	<property name="dataSource" ref="dataSource"></property>
     </bean-->
 
-<!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/dbminishop"/>
 		<property name="username" value="root" />
 		<property name="password" value="1234" />
-	</bean > -->
- 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+	</bean > 
+ 	<!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://node226810-env-6507952.j.layershift.co.uk/dbminishop"/>
 		<property name="username" value="root" />
 		<property name="password" value="KFSdrg60690" />
-	</bean >
+	</bean > -->
 	<bean id="multipartResolver"   
 	class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>  
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">

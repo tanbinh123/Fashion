@@ -244,12 +244,12 @@
 							<c:choose>
 		                                <c:when test="${i == 1}">
 		                                    <li class="page-item active">
-		                                        <a class="page-link" href="#">${i}</a>
+		                                        <a class="page-link" href='<c:url value="/shoppage/page/${i}"/>'>${i}</a>
 		                                    </li>
 		                                </c:when>
 		                                <c:otherwise>
 		                                    <li class="page-item">
-		                                        <a class="page-link" href="#">${i}</a>
+		                                        <a class="page-link" href='<c:url value="/shoppage/page/${i}"/>'>${i}</a>
 		                                    </li>
 		                                </c:otherwise>
 		                       </c:choose>
