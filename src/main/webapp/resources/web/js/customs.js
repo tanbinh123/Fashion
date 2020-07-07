@@ -252,7 +252,7 @@ $(document).ready(function(){
 				datajson:JSON.stringify(json)
 			},
 			success: function(value){
-				
+				location.reload();
 			}	
 	})
 		
