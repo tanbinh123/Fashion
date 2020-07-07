@@ -1,13 +1,16 @@
 package com.manhnguyen.controller;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.hibernate.annotations.Check;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,6 +49,8 @@ public class HomeController {
 	DiscountService discountService;
 	@Autowired
 	ContactService contactService;
+	@Autowired
+	JavaMailSender javaMailSender;
 	
 	@GetMapping
 	public String DefaultHome(ModelMap map,HttpSession httpSession) {
@@ -102,14 +107,17 @@ public class HomeController {
 		cv.setTenchucvu("KHACHHANG");
 		cv.setMachucvu(1);
 		if(pass.equals(repass)&& check==true) {
-		nv.setChucvu(cv);
-		nv.setEmail(email);
-		nv.setTendangnhap(user);
-		nv.setMatkhau(pass);
-		boolean kt =qlns.insertCustomer(nv);
-		if(kt!=true) {
-			return "web/404";
-		}
+			nv.setChucvu(cv);
+			nv.setEmail(email);
+			nv.setTendangnhap(user);
+			nv.setMatkhau(pass);
+			boolean kt =qlns.insertCustomer(nv);
+			if(kt!=true) {
+				return "web/404";
+			}else {
+				//send mail register success
+				cheddulingSendMail(email);
+			}
 		}else {
 			return "web/404";
 		}
@@ -131,6 +139,15 @@ public class HomeController {
 	@GetMapping("Blog/")
 	public String Blog(ModelMap map) {
 		return "web/blog-page";
+	}
+	
+	//@Scheduled(fixedDelay = 1000*60)
+	public void cheddulingSendMail(String email) {
+		SimpleMailMessage message = new SimpleMailMessage();
+		message.setTo(email); 
+		message.setSubject("Hi");
+		message.setText("Welcome you register my Shop"); //Send Message!
+		this.javaMailSender.send(message);
 	}
 
 }

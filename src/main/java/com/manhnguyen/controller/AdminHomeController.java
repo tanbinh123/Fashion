@@ -33,7 +33,7 @@ public class AdminHomeController {
 	BillDetailService billdt;
 	@Autowired
 	ContactService contact;
-	@GetMapping
+	@GetMapping("home")
 	public String deFault(HttpSession httpSession,ModelMap map) {
 		if(httpSession.getAttribute("dangnhap")!=null)
 		{
@@ -60,7 +60,7 @@ public class AdminHomeController {
 	public String SingInAdmin() {
 		return "admin/register";
 	}
-	@GetMapping("LoginAdmin/")
+	@GetMapping
 	public String LoginAdmin() {
 		return "admin/login";
 	}

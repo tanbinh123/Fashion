@@ -14,7 +14,7 @@ $(document).ready(function(){
 			},
 			success: function(value){
 				if(value=="true"){
-					 window.location="/Fashion/admin/";
+					 window.location="/Fashion/admin/home";
 				}else{
 					$("#checklogin").text("Đăng nhập thất bại");
 				}

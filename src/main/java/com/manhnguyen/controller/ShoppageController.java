@@ -133,6 +133,5 @@ public class ShoppageController {
 		map.addAttribute("num",num);
 		return"web/shop-page";
 	}
-	
 
 }
