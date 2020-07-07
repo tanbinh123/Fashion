@@ -60,7 +60,7 @@ public class AdminHomeController {
 	public String SingInAdmin() {
 		return "admin/register";
 	}
-	@GetMapping
+	@GetMapping({"","LoginAdmin/"})
 	public String LoginAdmin() {
 		return "admin/login";
 	}
