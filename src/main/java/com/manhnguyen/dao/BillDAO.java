@@ -38,7 +38,7 @@ public class BillDAO implements BillImpl{
 	public List<Charts> list() {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.getCurrentSession();
-		String sql="select sum(giatien),month(ngayhd) from CHITIETHOADON group by month(ngayhd) order by month(ngayhd) asc";
+		String sql="select sum(giatien),month(ngayhd) from chitiethoadon group by month(ngayhd) order by month(ngayhd) asc";
 	    Query sumQuery = session.createQuery(sql);
 	    List<Object[]>list=sumQuery.list();
 	    List<Charts>listex=new ArrayList<Charts>();
@@ -59,7 +59,7 @@ public class BillDAO implements BillImpl{
 	public List<HoaDon> getListCheckOut() {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.getCurrentSession();
-		String sql="from HOADON where tinhtrang=0";
+		String sql="from hoadon where tinhtrang=0";
 		List<HoaDon>list=session.createQuery(sql).getResultList();
 		return list;
 	}
@@ -67,7 +67,7 @@ public class BillDAO implements BillImpl{
 	@Transactional
 	public int AcceptOrder(int id) {
 		Session session=sessionFactory.getCurrentSession();
-		String sql="Update HOADON set tinhtrang=1 where mahoadon="+id;
+		String sql="Update hoadon set tinhtrang=1 where mahoadon="+id;
 		int check=session.createQuery(sql).executeUpdate();
 		//System.out.println(check);
 		return check;

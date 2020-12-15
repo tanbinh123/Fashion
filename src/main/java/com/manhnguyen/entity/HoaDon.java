@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
-@Entity(name="HOADON")
+@Entity(name="hoadon")
 public class HoaDon {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

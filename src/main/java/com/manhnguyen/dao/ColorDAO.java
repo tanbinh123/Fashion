@@ -24,7 +24,7 @@ public class ColorDAO implements ColorImpl {
 	public List<MauSanPham> colorList() {
 		
 		Session session=sessionFactory.getCurrentSession();
-		String sql="from MAUSANPHAM";
+		String sql="from mausanpham";
 		List<MauSanPham>list=session.createQuery(sql).getResultList();
 		// TODO Auto-generated method stub
 		return list;

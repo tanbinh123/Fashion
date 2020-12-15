@@ -22,7 +22,7 @@ public class SizeDAO implements SizeImpl {
 	@Transactional
 	public List<SizeSanPham> getSizeProduct() {
 		Session session=sessionFactory.getCurrentSession();
-		String sql="from SIZESANPHAM";
+		String sql="from sizesanpham";
 		List<SizeSanPham>list=session.createQuery(sql).getResultList();
 		return list;
 	}

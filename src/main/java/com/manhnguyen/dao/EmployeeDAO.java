@@ -22,7 +22,7 @@ public class EmployeeDAO implements EmployeeImpl{
 	public boolean checkLogin(String username, String password) {
 		try {
 			Session session=sessionFactory.getCurrentSession();
-			NhanVien nv=(NhanVien) session.createQuery("from NHANVIEN Where tendangnhap='"+username+"'and matkhau='"+password+"'").getSingleResult();
+			NhanVien nv=(NhanVien) session.createQuery("from nhanvien Where tendangnhap='"+username+"'and matkhau='"+password+"'").getSingleResult();
 			if(nv!=null) {
 				return true;
 			}else {

@@ -41,7 +41,7 @@ public class DiscountDAO implements DiscountImpl{
 		}
 		
 		Session session=sessionFactory.getCurrentSession();
-		String sql="from KHUYENMAI where mua ='"+season+"'";
+		String sql="from khuyenmai where mua ='"+season+"'";
 		KhuyenMai discount=(KhuyenMai) session.createQuery(sql).getSingleResult();
 		return discount;
 	}

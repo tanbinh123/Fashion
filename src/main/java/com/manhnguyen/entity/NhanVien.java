@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-@Entity(name="NHANVIEN")
+@Entity(name="nhanvien")
 public class NhanVien {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

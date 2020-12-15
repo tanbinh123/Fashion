@@ -27,7 +27,7 @@ public class ProductDAO implements ProductImpl{
 	@Transactional
 	public List<SanPham> getListProduct() {
 		Session session=sessionFactory.getCurrentSession();
-		String sql="from SANPHAM Limit";
+		String sql="from sanpham Limit";
 		// load 4 product for home page 
 		List<SanPham> list= session.createQuery(sql).setFirstResult(0).setMaxResults(4).getResultList();
 		return list;
@@ -37,18 +37,18 @@ public class ProductDAO implements ProductImpl{
 		List <SanPham>list=new ArrayList<SanPham>();
 		if(id<0) {
 			Session session=sessionFactory.getCurrentSession();
-			String sql="from SANPHAM";
+			String sql="from sanpham";
 			list= session.createQuery(sql).getResultList();
 		}
 		if(id==2) {
 			Session session=sessionFactory.getCurrentSession();
-			String sql="from SANPHAM order by TENSANPHAM asc";
+			String sql="from sanpham order by TENSANPHAM asc";
 			list= session.createQuery(sql).setFirstResult(start).setMaxResults(9).getResultList();
 			
 		}
 		if(id==3) {
 			Session session=sessionFactory.getCurrentSession();
-			String sql="from SANPHAM";
+			String sql="from sanpham";
 			list=session.createQuery(sql).getResultList();
 		}
 		return list;
@@ -57,21 +57,21 @@ public class ProductDAO implements ProductImpl{
 	@org.springframework.transaction.annotation.Transactional
 	public List<SanPham> getList_Category(int id) {
 		Session session=sessionFactory.getCurrentSession();
-		String sql="from SANPHAM sp where sp. danhMucSanPham.madanhmuc='"+id+"'";
+		String sql="from sanpham sp where sp. danhMucSanPham.madanhmuc='"+id+"'";
 		List<SanPham>list=session.createQuery(sql).getResultList();
 		return list;
 	}
 	@Transactional
 	public SanPham getDetail(int id) {
 		Session session=sessionFactory.getCurrentSession();
-		String sql="from SANPHAM where MASANPHAM='"+id+"'";
+		String sql="from sanpham where MASANPHAM='"+id+"'";
 		SanPham product=(SanPham) session.createQuery(sql).getSingleResult();
 		return product;
 	}
 	@Transactional 
 	public List<SanPham> search(String key) {
 		Session session=sessionFactory.getCurrentSession();
-		String sql="from SANPHAM where TENSANPHAM like '%"+key+"%' or GIATIEN like '%"+key+"%' or GIANHCHO like'%"+key
+		String sql="from sanpham where TENSANPHAM like '%"+key+"%' or GIATIEN like '%"+key+"%' or GIANHCHO like'%"+key
 				+"%' or MOTA like '%"+key+"%'";
 		List<SanPham>list=session.createQuery(sql).getResultList();
 		
@@ -97,7 +97,7 @@ public class ProductDAO implements ProductImpl{
 	@Transactional
 	public SanPham getListProduct(int id) {
 		Session session=sessionFactory.getCurrentSession();
-		String sql="from SANPHAM sp where sp.masanpham ="+id;
+		String sql="from sanpham sp where sp.masanpham ="+id;
 		SanPham product= (SanPham) session.createQuery(sql).getSingleResult();
 		return product;
 	}

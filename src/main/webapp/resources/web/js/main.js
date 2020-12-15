@@ -638,12 +638,13 @@
             CountDown
         ---------------------------*/
 
-        $('.countdown').downCount({
+         /* $('.countdown').downCount({
             date: '07/09/2020 12:00:00',
             offset: +6
         }, function () {
             alert('Countdown done!');
         });
+        */
 
 
         /*----------------------

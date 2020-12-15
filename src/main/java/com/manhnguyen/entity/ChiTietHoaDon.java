@@ -6,7 +6,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity(name="CHITIETHOADON")
+@Entity(name="chitiethoadon")
 public class ChiTietHoaDon implements Serializable {
 
 	@EmbeddedId

@@ -22,7 +22,7 @@ public class CategoryDAO implements CategoryImpl{
 	@Transactional
 	public List<DanhMucSanPham> CategoryList() {
 		Session session=sessionFactory.getCurrentSession();
-		String sql="from DANHMUCSANPHAM";
+		String sql="from danhmucsanpham";
 		List<DanhMucSanPham>list=session.createQuery(sql).getResultList();
 		return list;
 	}

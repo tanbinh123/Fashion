@@ -39,9 +39,9 @@ public class BillDetailDAO implements BillDetail{
 		//index !=1 select total year
 		String sql="";
 		if(index==1) {
-			 sql+="SELECT sum(giatien) FROM CHITIETHOADON where month(ngayhd)=month(sysdate())";
+			 sql+="SELECT sum(giatien) FROM chitiethoadon where month(ngayhd)=month(sysdate())";
 		}else {
-			 sql+="SELECT sum(giatien) FROM CHITIETHOADON where year(ngayhd)=year(sysdate())";
+			 sql+="SELECT sum(giatien) FROM chitiethoadon where year(ngayhd)=year(sysdate())";
 		}
 		
 		Double x= Double.parseDouble((String) session.createQuery(sql).getSingleResult());
@@ -53,7 +53,7 @@ public class BillDetailDAO implements BillDetail{
 	public List<ChiTietHoaDon> getBillDetail(int index) {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.getCurrentSession();
-		String sql="from CHITIETHOADON m where m.chiTietHoaDonId.mahoadon="+index;
+		String sql="from chitiethoadon m where m.chiTietHoaDonId.mahoadon="+index;
 		List<ChiTietHoaDon> cthdChiTietHoaDonId=session.createQuery(sql).getResultList();
 		return cthdChiTietHoaDonId;
 	}

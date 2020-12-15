@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-@Entity(name = "CHITIETSANPHAM")
+@Entity(name = "chitietsanpham")
 public class ChiTietSanPham implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -34,7 +34,7 @@ public class ContactDAO implements ContactImpl {
 	@Transactional
 	public List<Contact> getMessage() {
 		Session session=sessionFactory.getCurrentSession();
-		String sql="from CONTACT";
+		String sql="from contact";
 		List<Contact>list=session.createQuery(sql).getResultList();
 		return list;
 	}

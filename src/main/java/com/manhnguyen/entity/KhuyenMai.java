@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
-@Entity(name="KHUYENMAI")
+@Entity(name="khuyenmai")
 public class KhuyenMai {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
