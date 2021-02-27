@@ -7,8 +7,7 @@ Mua hàng, thanh toán
 Đăng nhập ,đăng xuất
 Thống kê
 Demo:https://www.youtube.com/watch?v=S_Rky_QtvZQ&t=407s
-
---Các chức năng đăng nhập bằng FB,GG, reset password chưa có thời gian nghiên cứu và thực hiện
+https://fashion-manhnguyen.herokuapp.com/
 ![Screenshot (1000)](https://user-images.githubusercontent.com/47816501/76776843-dfe34880-67d9-11ea-81dd-e5aed9d72a12.png)
 ![Screenshot (1001)](https://user-images.githubusercontent.com/47816501/76776846-e1ad0c00-67d9-11ea-92d3-0d1d340ef417.png)
 ![Screenshot (1003)](https://user-images.githubusercontent.com/47816501/76776849-e376cf80-67d9-11ea-927c-dc09f7f53e4f.png)
